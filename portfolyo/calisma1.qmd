@@ -2,15 +2,103 @@
 title: "Çalışma 1"
 ---
 
-\
-(Aşağıdakiler örnek olarak verilmiştir.)
+## (a)  Veri Bilimi ve Endüstri Mühendisliği Üzerine Sohbetler - Cem Vardar & Erdi Dasdemir
 
-Bu çalışmada 3 görevimiz var. Bu görevler..... Bunlara sırayla aşağıda cevap arıyoruz.
+Sayın Cem Vardar'ın veri bilimi ve endüstri mühendisliği üzerine olan söyleşisinde, problemlerin çözüm yolları için verimli ve efektif adımlar atılması gerektiğini temel almaktadır. Bu adımlar için gereken yaklaşımlar ve edinilmesi gerekli yeteneklerden bahsetmektedir. Problemin daha genel ele alarak adım adım detaylara inilmesi çoğu zaman daha doğru bir yaklaşımdır. Endüstri mühendisleri tek bir konuya eğilmek yerine birçok alanda bilgi ve tecrübe sahibidir bu sebeple verileri anlamlandırma konusunda daha yetkin olabilmektedirler. Veri analitiği ve veri bilimi araçlarından destek alınarak bu problemlerin çözülmesi amaçlanmaktadır. Doğru verileri toplamak ve bu verileri doğru ayrıştırmak, doğru analiz ederek süreci daha verimli hale getirmeye odaklanarak her zaman başarılı süreçler elde edebileceğimizden bahsetmektedir. Sonuç olarak;
 
-## (a)
+-    Mühendsilik ve matematiksel yaklaşımlarla gerçek hayattaki sorunları çözmeye odaklanmak yola çıkış noktamızdır,
+
+-    Endüstri mühendisliği karmaşık sistemlerin işletildiği fabrika, lojistik, şirket süreçleri, insanlar ve organizasyolar gibi birçok yapı ile uğraşmaktadır,
+
+-    Veri bilimini bir amaç olarak görmemeliyiz, raporlama tahminleme, optimizasyon bir hedef değil mevcut problemi çözmek için bir araçtır.
+
+-   Kompleks sistemlerde küçük ve kontrollü iyileştirmeler ile çalışan yapıyı tamamen bozmadan adım adım iyileştirmek daha sağıklıklı olacaktır.
+
+## (b) Sorular 
+
+Soru 1 : Aşağıdaki becerilerden hangisi uzun vadede en değerli ve değişmesi en zor olan yeteneklerden biridir ?
+
+A\) Belirli bir makine öğrenmesi kütüphanesini öğrenmek,
+
+B\) İleri düzey matematiksel modelleme bilgisi,
+
+C\) Bir yazılım aracında uzmanlaşmak,
+
+D\) Problem çözme ve analitik düşünme becerisi,
+
+E\) Bir programlama dilinde uzman seviyesine ulaşmak.
+
+Soru 2 : Veri analistliği, tahminsel modelleme ve makine öğrenmesi alanlarındaki farkları açıklayınız. Bu alanların iş dünyasındaki kullanım yaygınlığı açısından
+
+nasıl konumlandığını yorumlayınız.
+
+-   Veri analistliği : Veri toplama ve temizleme, raporlama, dashboard / Temel ve en yaygın alandır.
+
+-   Tahminsel Modelleme : İstatistik, regresyon, olasılık temelli yaklaşımlar / Orta seviyede kullanılan bir alandır.
+
+-   Makine Öğrenmesi : İleri teknikler içerir / Popüler ama çok kullanılan bir alan değil.
+
+## (c)
 
 ```{r}
-1 + 1
-```
+library(dslabs)
+data("polls_us_election_2016")
 
-## (b)
+#Kişisel bilgiler
+my_first <- "Gizem Cetin"
+my_birth_year <- 1992
+
+
+# k değerinin tanımlanması ve hesaplanması
+k<- (nchar(my_first) + my_birth_year) %% 15 + 8
+print(paste("Bulduğumuz k değeri : ", k))
+
+
+
+# k adet satırın tablosu
+if(k %% 2 == 0 )
+{ 
+  head (polls_us_election_2016, k)
+  }else 
+{
+  tail (polls_us_election_2016, k)
+}
+
+
+# Tüm veri setindeki NA değer sayısı
+toplam_na <- sum(is.na(polls_us_election_2016))
+print(paste("Toplam NA (eksik değer) sayısı : ", toplam_na))
+
+
+# Büyükten küçüğe doğru sıralanmış sütun başına NA sayısının hesaplanması 
+sutun_na <- colSums(is.na(polls_us_election_2016))
+siralanmis_na <- sort (sutun_na, decreasing = TRUE)
+head (siralanmis_na, 8)
+
+
+#
+new_data <- polls_us_election_2016
+num_replace <- my_birth_year + k
+char_replace <- paste0(my_first, "_", k)
+
+for(col_name in names(new_data))
+{
+  if(is.numeric(new_data[[col_name]]))
+  {
+    new_data[[col_name]][is.na(new_data[[col_name]])]<- num_replace
+  }else {
+    new_data[[col_name]]<-as.character(new_data[[col_name]])
+    new_data[[col_name]][is.na(new_data[[col_name]])] <- char_replace
+    }
+}
+ if (k%% 2 == 0 ){
+   print(head(new_data , k))
+ } else {
+   print(tail(new_data , k))
+ }
+
+
+print(paste ("Yeni veri çerçevesinde kalan toplam NA sayısı :", sum(is.na(new_data))))
+
+anyNA(new_data)
+```

@@ -3,6 +3,8 @@ title: "Analitik sayfama hoş geldiniz"
 sidebar: false 
 ---
 
+Merhabalar, Ben Gizem Çetin
+
 MUY660-İş Analitiği dersi sayfama hoş geldiniz.
 
-Bu analitik çalışmalarımızı paylaşıyorum.
+Bu sayfada analitik çalışmalarımızı paylaşıyorum.
