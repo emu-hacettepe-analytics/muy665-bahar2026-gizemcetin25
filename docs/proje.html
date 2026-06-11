@@ -6,8 +6,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Eylül Işıl Altıparmak">
+<meta name="author" content="Gizem Çetin">
+<meta name="author" content="Selcan İşlek">
+<meta name="dcterms.date" content="2026-06-07">
 
-<title>Proje X (proje adını yazınız) – [xxxx]’in Analitik Labı</title>
+<title>Elektronik Eğitim Simülatöründe Geri Tepme Davranışının Sentetik Veri ile İş Analitiği – Gizem’in Analitik Labı</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -37,14 +76,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b09ffb0c710b10090e35f4f5c8599541.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-5b22ffe13dd2aa798062e3956142f8dd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-b09ffb0c710b10090e35f4f5c8599541.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b09ffb0c710b10090e35f4f5c8599541.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,169 +112,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -249,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">[xxxx]’in Analitik Labı</span>
+    <span class="navbar-title">Gizem’in Analitik Labı</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -280,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Ödevler</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./project.qmd">
+    <a class="dropdown-item" href="./proje.html">
  <span class="dropdown-text">Proje</span></a>
   </li>  
     </ul>
@@ -288,10 +161,9 @@ ul.task-list li input[type="checkbox"] {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools tools-wide">
-    <a href="https://twitter.com" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://github.com/gizemcetin25" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
     <a href="https://twitter.com" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-twitter"></i></a>
-    <a href="https://linkedin.com" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-linkedin"></i></a>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+    <a href="./www.linkedin.com/in/gizem-çetin-73102a177" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-linkedin"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -309,17 +181,21 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#veri-kaynağı" id="toc-veri-kaynağı" class="nav-link" data-scroll-target="#veri-kaynağı"><span class="header-section-number">2.1</span> Veri Kaynağı</a></li>
   <li><a href="#veri-hakkında-genel-bilgiler" id="toc-veri-hakkında-genel-bilgiler" class="nav-link" data-scroll-target="#veri-hakkında-genel-bilgiler"><span class="header-section-number">2.2</span> Veri Hakkında Genel Bilgiler</a></li>
-  <li><a href="#tercih-sebebi" id="toc-tercih-sebebi" class="nav-link" data-scroll-target="#tercih-sebebi"><span class="header-section-number">2.3</span> Tercih Sebebi</a></li>
-  <li><a href="#ön-işleme" id="toc-ön-işleme" class="nav-link" data-scroll-target="#ön-işleme"><span class="header-section-number">2.4</span> Ön İşleme</a></li>
+  <li><a href="#veri-okuma-ve-ön-işleme" id="toc-veri-okuma-ve-ön-işleme" class="nav-link" data-scroll-target="#veri-okuma-ve-ön-işleme"><span class="header-section-number">2.3</span> Veri Okuma ve Ön İşleme</a></li>
   </ul></li>
-  <li><a href="#analiz" id="toc-analiz" class="nav-link" data-scroll-target="#analiz"><span class="header-section-number">3</span> Analiz</a>
+  <li><a href="#keşifsel-veri-analizi" id="toc-keşifsel-veri-analizi" class="nav-link" data-scroll-target="#keşifsel-veri-analizi"><span class="header-section-number">3</span> Keşifsel Veri Analizi</a></li>
+  <li><a href="#grafiklerle-analiz" id="toc-grafiklerle-analiz" class="nav-link" data-scroll-target="#grafiklerle-analiz"><span class="header-section-number">4</span> Grafiklerle Analiz</a>
   <ul class="collapse">
-  <li><a href="#keşifsel-veri-analizi" id="toc-keşifsel-veri-analizi" class="nav-link" data-scroll-target="#keşifsel-veri-analizi"><span class="header-section-number">3.1</span> Keşifsel Veri Analizi</a></li>
-  <li><a href="#trend-analizi" id="toc-trend-analizi" class="nav-link" data-scroll-target="#trend-analizi"><span class="header-section-number">3.2</span> Trend Analizi</a></li>
-  <li><a href="#model-uydurma" id="toc-model-uydurma" class="nav-link" data-scroll-target="#model-uydurma"><span class="header-section-number">3.3</span> Model Uydurma</a></li>
-  <li><a href="#sonuçlar" id="toc-sonuçlar" class="nav-link" data-scroll-target="#sonuçlar"><span class="header-section-number">3.4</span> Sonuçlar</a></li>
+  <li><a href="#grafik-1-faktör-kombinasyonlarına-göre-gerçekçilik-skoru" id="toc-grafik-1-faktör-kombinasyonlarına-göre-gerçekçilik-skoru" class="nav-link" data-scroll-target="#grafik-1-faktör-kombinasyonlarına-göre-gerçekçilik-skoru"><span class="header-section-number">4.1</span> Grafik 1: Faktör Kombinasyonlarına Göre Gerçekçilik Skoru</a></li>
+  <li><a href="#grafik-2-sapma-ve-toparlanma-süresi-ilişkisi" id="toc-grafik-2-sapma-ve-toparlanma-süresi-ilişkisi" class="nav-link" data-scroll-target="#grafik-2-sapma-ve-toparlanma-süresi-ilişkisi"><span class="header-section-number">4.2</span> Grafik 2: Sapma ve Toparlanma Süresi İlişkisi</a></li>
+  <li><a href="#grafik-3-sönümleme-seviyesine-göre-toparlanma-süresi" id="toc-grafik-3-sönümleme-seviyesine-göre-toparlanma-süresi" class="nav-link" data-scroll-target="#grafik-3-sönümleme-seviyesine-göre-toparlanma-süresi"><span class="header-section-number">4.3</span> Grafik 3: Sönümleme Seviyesine Göre Toparlanma Süresi</a></li>
+  <li><a href="#grafik-4-enerji-yükü-ve-gerçekçilik-skoru-ilişkisi" id="toc-grafik-4-enerji-yükü-ve-gerçekçilik-skoru-ilişkisi" class="nav-link" data-scroll-target="#grafik-4-enerji-yükü-ve-gerçekçilik-skoru-ilişkisi"><span class="header-section-number">4.4</span> Grafik 4: Enerji Yükü ve Gerçekçilik Skoru İlişkisi</a></li>
+  <li><a href="#grafik-5-faktör-seviyelerine-göre-ortalama-skor" id="toc-grafik-5-faktör-seviyelerine-göre-ortalama-skor" class="nav-link" data-scroll-target="#grafik-5-faktör-seviyelerine-göre-ortalama-skor"><span class="header-section-number">4.5</span> Grafik 5: Faktör Seviyelerine Göre Ortalama Skor</a></li>
   </ul></li>
-  <li><a href="#sonuçlar-ve-ana-çıkarımlar" id="toc-sonuçlar-ve-ana-çıkarımlar" class="nav-link" data-scroll-target="#sonuçlar-ve-ana-çıkarımlar"><span class="header-section-number">4</span> Sonuçlar ve Ana Çıkarımlar</a></li>
+  <li><a href="#çoklu-yanıt-değerlendirmesi" id="toc-çoklu-yanıt-değerlendirmesi" class="nav-link" data-scroll-target="#çoklu-yanıt-değerlendirmesi"><span class="header-section-number">5</span> Çoklu Yanıt Değerlendirmesi</a></li>
+  <li><a href="#sonuçlar-ve-ana-çıkarımlar" id="toc-sonuçlar-ve-ana-çıkarımlar" class="nav-link" data-scroll-target="#sonuçlar-ve-ana-çıkarımlar"><span class="header-section-number">6</span> Sonuçlar ve Ana Çıkarımlar</a></li>
+  <li><a href="#kısıtlar-ve-etik-not" id="toc-kısıtlar-ve-etik-not" class="nav-link" data-scroll-target="#kısıtlar-ve-etik-not"><span class="header-section-number">7</span> Kısıtlar ve Etik Not</a></li>
+  <li><a href="#kaynaklar" id="toc-kaynaklar" class="nav-link" data-scroll-target="#kaynaklar"><span class="header-section-number">8</span> Kaynaklar</a></li>
   </ul>
 </nav>
 </nav>
@@ -330,17 +206,31 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Proje X (proje adını yazınız)</h1>
+<div class="quarto-title-block"><div><h1 class="title">Elektronik Eğitim Simülatöründe Geri Tepme Davranışının Sentetik Veri ile İş Analitiği</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<p class="subtitle lead">MUY665 İş Analitiği Dönem Projesi</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-contents">
+             <p>Eylül Işıl Altıparmak </p>
+             <p>Gizem Çetin </p>
+             <p>Selcan İşlek </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 7, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -350,75 +240,1107 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Projemizle ilgili güncellemelerden haberdar olmak için bu xxxxx bağlantısındaki proje sayfamızı takip edin.</strong></p>
-<p>(Aşağıdaki başlıklar örnek olarak verilmiştir; lütfen gerektiği şekilde düzenlemekten çekinmeyin.)</p>
+<style>
+:root {
+  --m4-koyu: #1F3D3A;
+  --m4-yesil: #2A9D8F;
+  --m4-mint: #8FD6C8;
+  --m4-acik: #D8F3EC;
+  --m4-nötr: #5B7C78;
+}
+
+table.table {
+  border: 1px solid rgba(31, 61, 58, 0.18);
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 0.92rem;
+}
+
+table.table thead th {
+  background: var(--m4-koyu);
+  color: #ffffff;
+  border-color: var(--m4-koyu);
+}
+
+table.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: rgba(216, 243, 236, 0.60);
+}
+
+table.table-hover > tbody > tr:hover > * {
+  background-color: rgba(143, 214, 200, 0.28);
+}
+
+caption {
+  color: var(--m4-koyu);
+  font-weight: 700;
+}
+</style>
 <section id="proje-genel-bakış-ve-kapsamı" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Proje Genel Bakış ve Kapsamı</h1>
-<p>xxxxxx</p>
+<p>Bu projede, mühimmat kullanmayan elektronik bir eğitim simülatöründe geri tepme davranışını temsil eden sentetik bir deney veri seti R programlama dili ile analiz edilmektedir. Elektronik eğitim simülatörlerinde temel amaç, kullanıcıya güvenli bir ortamda gerçekçi bir eğitim deneyimi sunmaktır. Bu tür sistemlerde geri tepme hissinin çok zayıf olması eğitim gerçekçiliğini azaltabilir; buna karşılık geri tepme davranışının çok sert, uzun süreli veya kontrolsüz olması kullanıcı deneyimini ve sistem güvenilirliğini olumsuz etkileyebilir.</p>
+<p>Bu nedenle bu çalışmada geri tepme davranışı tek bir performans göstergesiyle değil, birden fazla kriterin birlikte değerlendirilmesiyle ele alınmıştır. Analizde sapma, toparlanma süresi, gerçekçilik skoru ve enerji yükü birlikte incelenmektedir. Sapma ve gerçekçilik skoru eğitim hissinin yeterliliğini temsil ederken, toparlanma süresi ve enerji yükü sistemin kontrol edilebilirliği ve uygulanabilirliği hakkında bilgi vermektedir.</p>
+<p>Projenin temel karar sorusu şudur: Farklı faktör seviyeleri arasında, sentetik deney senaryosu içinde en dengeli geri tepme davranışını hangi ayar kombinasyonu sağlamaktadır? Bu soruya yanıt verebilmek için faktör seviyeleri arasındaki farklar özet tablolar, grafikler ve çoklu yanıt kalite indeksi yardımıyla incelenmiştir.</p>
+<p>Çalışma kapsamında dört temel faktör ele alınmıştır: aktüatör sürüş seviyesi, darbe süresi, hareketli kütle seviyesi ve sönümleme seviyesi. Bu faktörlerin her biri iki seviyede değerlendirilmiş ve her kombinasyon için iki tekrar olacak şekilde toplam 32 gözlemden oluşan bir sentetik veri seti kullanılmıştır.</p>
+<p>Çalışmanın ana odağı ileri istatistiksel testlerden çok, MUY665 dersinde işlenen iş analitiği sürecini uygulamaktır. Bu nedenle proje; veri okuma, veri düzenleme, keşifsel veri analizi, görselleştirme, özet tablo oluşturma ve karar desteği adımları üzerinden ilerlemektedir. R tarafında <code>readr</code>, <code>dplyr</code>, <code>tidyr</code>, <code>stringr</code> ve <code>ggplot2</code> paketleri kullanılarak ders notlarında yer alan temel veri analitiği yaklaşımları uygulanmıştır.</p>
+<p>Veri seti sentetik/senaryo tabanlı olarak hazırlanmıştır, bulgular gerçek bir fiziksel sistemin kesin sonucu olarak yorumlanmamalıdır. Buna karşılık çalışma, gerçek test verisi elde edildiğinde aynı analiz akışının nasıl yeniden çalıştırılabileceğini gösteren tekrarlanabilir bir iş analitiği örneği sunmaktadır.</p>
 </section>
 <section id="veri" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Veri</h1>
-<p>xxxxxx</p>
 <section id="veri-kaynağı" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="veri-kaynağı"><span class="header-section-number">2.1</span> Veri Kaynağı</h2>
-<p>xxxxxx</p>
+<p>Bu çalışmada kullanılan veri seti gerçek saha veya test ölçümü değildir. Veri, mühimmat kullanmayan elektronik eğitim simülatörünün geri tepme davranışını temsil etmek amacıyla oluşturulmuş sentetik/senaryo tabanlı deney verisidir.</p>
+<p>Bu nedenle bulgular, gerçek bir fiziksel sistemin kesin performans kanıtı olarak değil, R ile iş analitiği yöntemlerinin yeniden üretilebilir bir uygulaması olarak yorumlanmalıdır.</p>
+<p>Veri kaynağının sentetik olarak seçilmesinin temel nedeni, gerçek bir prototip veya saha testinden ölçüm alınmamış olmasıdır. Bu durum, çalışmanın sınırlılığı olmakla birlikte aynı zamanda ders kapsamında öğrenilen R tabanlı veri analitiği sürecini kontrollü bir veri seti üzerinde uygulama olanağı sağlamaktadır. Bu nedenle veri seti, gerçek sistem davranışını birebir temsil eden bir ölçüm kaydı olarak değil, karar analitiği yaklaşımını göstermek için oluşturulmuş bir çalışma verisi olarak ele alınmıştır.</p>
 </section>
 <section id="veri-hakkında-genel-bilgiler" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="veri-hakkında-genel-bilgiler"><span class="header-section-number">2.2</span> Veri Hakkında Genel Bilgiler</h2>
-<p>xxxxxx</p>
+<p>Veri seti dört faktör ve dört yanıt değişkeninden oluşmaktadır. Dört faktörün her biri iki seviyede ele alınmış, her kombinasyon iki tekrar ile gözlemlenmiş ve toplam 32 gözlem elde edilmiştir.</p>
+<p>Faktörler, sistem üzerinde değiştirilebilir ayarları temsil etmektedir:</p>
+<ul>
+<li><code>A - Aktüatör sürüş seviyesi</code>: Aktüatörün geri tepme etkisini oluşturmak için ne kadar güçlü çalıştırıldığını ifade eder. Düşük sürüş seviyesi daha yumuşak bir tepki üretirken, yüksek sürüş seviyesi daha belirgin bir geri tepme hissi oluşturabilir.</li>
+<li><code>B - Darbe süresi</code>: Geri tepme etkisinin ne kadar süreyle uygulandığını gösterir. Kısa darbe süresi daha ani ve kontrollü bir etkiyi, uzun darbe süresi ise daha yayılmış ve toparlanması daha zor olabilecek bir etkiyi temsil eder.</li>
+<li><code>C - Hareketli kütle seviyesi</code>: Simülatör içinde geri tepme hissini oluşturan hareketli parçanın kütle düzeyini temsil eder. Daha yüksek kütle, geri tepme hissini güçlendirebilir; ancak sistemin toparlanma davranışını da etkileyebilir.</li>
+<li><code>D - Sönümleme seviyesi</code>: Geri tepme sonrası hareketin ne kadar hızlı bastırıldığını veya dengelendiğini ifade eder. Yüksek sönümleme, sistemin daha kontrollü biçimde toparlanmasına yardımcı olabilir.</li>
+</ul>
+<p>Yanıt değişkenleri ise her deney koşulunda sistemin nasıl davrandığını ölçmek için kullanılan performans göstergeleridir:</p>
+<ul>
+<li><code>Sapma</code>: Geri tepme sonrasında nişan hattında veya simülatör ekseninde oluşan sapma düzeyini temsil eder. Çok düşük sapma gerçekçilik hissini azaltabilir; çok yüksek sapma ise kontrolü zorlaştırabilir.</li>
+<li><code>Toparlanma</code>: Geri tepme etkisinden sonra sistemin yeniden kararlı hale gelmesi için gereken süreyi temsil eder. Daha düşük toparlanma süresi, kullanıcının bir sonraki harekete daha hızlı hazırlanabilmesi açısından avantajlıdır.</li>
+<li><code>Skor</code>: Geri tepme davranışının kullanıcı tarafından ne kadar gerçekçi algılanabileceğini temsil eden sentetik bir değerlendirme skorudur. Bu değişkende yüksek değer daha olumlu kabul edilmiştir.</li>
+<li><code>Enerji</code>: Geri tepme etkisini oluşturmak için gereken enerji yükünü temsil eder. Enerji değerinin çok yükselmesi, gerçek bir sistemde batarya tüketimi, ısınma veya mekanik zorlanma gibi konular açısından risk oluşturabilir.</li>
+</ul>
+<p>Bu yapı, her faktör kombinasyonunun sistem davranışı üzerindeki etkisini karşılaştırmaya imkan verir. Örneğin yüksek sürüş seviyesi geri tepme hissini artırabilir; ancak aynı zamanda enerji yükünü veya toparlanma süresini de artırabilir. Benzer şekilde yüksek sönümleme, sistemin daha kontrollü toparlanmasına yardımcı olabilir fakat gerçekçilik algısı üzerindeki etkisi diğer faktörlerle birlikte değerlendirilmelidir. Bu nedenle veri seti, tek değişkenli bir sıralama yapmak yerine çok kriterli bir karar problemi olarak yorumlanmıştır.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-sm caption-top small">
+<caption>Veri setinden ilk sekiz gözlem</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">Deney sırası</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Standart sıra</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Tekrar</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">A - Aktüatör sürüşü</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">B - Darbe süresi</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">C - Hareketli kütle</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">D - Sönümleme</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Sapma</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Toparlanma</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Gerçekçilik skoru</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Enerji yükü</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Kısa</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">1.46</td>
+<td style="text-align: right;">114</td>
+<td style="text-align: right;">7.20</td>
+<td style="text-align: right;">5.72</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Kısa</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">1.55</td>
+<td style="text-align: right;">112</td>
+<td style="text-align: right;">7.17</td>
+<td style="text-align: right;">5.70</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Kısa</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">3.26</td>
+<td style="text-align: right;">137</td>
+<td style="text-align: right;">8.59</td>
+<td style="text-align: right;">9.01</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Kısa</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">3.32</td>
+<td style="text-align: right;">135</td>
+<td style="text-align: right;">8.72</td>
+<td style="text-align: right;">8.68</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Uzun</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">2.20</td>
+<td style="text-align: right;">163</td>
+<td style="text-align: right;">6.80</td>
+<td style="text-align: right;">8.11</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Uzun</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">2.03</td>
+<td style="text-align: right;">148</td>
+<td style="text-align: right;">6.84</td>
+<td style="text-align: right;">7.89</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Uzun</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">4.16</td>
+<td style="text-align: right;">201</td>
+<td style="text-align: right;">7.87</td>
+<td style="text-align: right;">11.05</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Uzun</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">4.11</td>
+<td style="text-align: right;">198</td>
+<td style="text-align: right;">8.11</td>
+<td style="text-align: right;">11.01</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </section>
-<section id="tercih-sebebi" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="tercih-sebebi"><span class="header-section-number">2.3</span> Tercih Sebebi</h2>
-<p>xxxxxx</p>
+<section id="veri-okuma-ve-ön-işleme" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="veri-okuma-ve-ön-işleme"><span class="header-section-number">2.3</span> Veri Okuma ve Ön İşleme</h2>
+<p>Veriler CSV formatında R ortamına aktarılmıştır. Ders notlarında yer alan <code>readr</code>, <code>dplyr</code>, <code>tidyr</code> ve <code>stringr</code> paketleri kullanılarak veri okunmuş, faktör değişkenleri düzenlenmiş, kombinasyon etiketi oluşturulmuş ve grafikler için uzun formata çevrilmiştir.</p>
+<p>Ön işleme aşamasında öncelikle veri setinde eksik değer olup olmadığı kontrol edilmiştir. Daha sonra <code>A</code>, <code>B</code>, <code>C</code> ve <code>D</code> değişkenleri karakter veri tipinden faktör yapısına dönüştürülmüştür. Bu dönüşüm önemlidir; çünkü bu değişkenler sayısal büyüklük değil, kategorik deney seviyelerini temsil etmektedir. Ayrıca grafiklerde ve özet tablolarda daha okunabilir bir yapı elde etmek için her satırda faktör kombinasyonunu gösteren ek bir etiket oluşturulmuştur.</p>
+<p>Grafik ve özet analizlerde daha esnek çalışabilmek için veri seti uzun formata da çevrilmiştir. Böylece <code>Sapma</code>, <code>Toparlanma</code>, <code>Skor</code> ve <code>Enerji</code> değişkenleri aynı yapı içinde karşılaştırılabilir hale getirilmiştir. Bu adım, ders notlarında anlatılan tidy data yaklaşımına uygun bir düzenleme adımıdır.</p>
+<p>Aşağıdaki tablo, analizde kullanılan 32 gözlemli ham sentetik veri setinin tamamını göstermektedir. Tabloda her satır bir deney koşulunu; faktör sütunları ilgili ayarı; son dört sütun ise bu ayar altında elde edilen sentetik yanıt değerlerini göstermektedir.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-sm caption-top small">
+<caption>Analizde kullanılan ham sentetik veri seti</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">Deney sırası</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Standart sıra</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Tekrar</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">A - Aktüatör sürüşü</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">B - Darbe süresi</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">C - Hareketli kütle</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">D - Sönümleme</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Sapma</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Toparlanma</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Gerçekçilik skoru</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Enerji yükü</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Kısa</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">1.46</td>
+<td style="text-align: right;">114</td>
+<td style="text-align: right;">7.20</td>
+<td style="text-align: right;">5.72</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Kısa</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">1.55</td>
+<td style="text-align: right;">112</td>
+<td style="text-align: right;">7.17</td>
+<td style="text-align: right;">5.70</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Kısa</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">3.26</td>
+<td style="text-align: right;">137</td>
+<td style="text-align: right;">8.59</td>
+<td style="text-align: right;">9.01</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Kısa</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">3.32</td>
+<td style="text-align: right;">135</td>
+<td style="text-align: right;">8.72</td>
+<td style="text-align: right;">8.68</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Uzun</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">2.20</td>
+<td style="text-align: right;">163</td>
+<td style="text-align: right;">6.80</td>
+<td style="text-align: right;">8.11</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Uzun</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">2.03</td>
+<td style="text-align: right;">148</td>
+<td style="text-align: right;">6.84</td>
+<td style="text-align: right;">7.89</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Uzun</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">4.16</td>
+<td style="text-align: right;">201</td>
+<td style="text-align: right;">7.87</td>
+<td style="text-align: right;">11.05</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Uzun</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">4.11</td>
+<td style="text-align: right;">198</td>
+<td style="text-align: right;">8.11</td>
+<td style="text-align: right;">11.01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Kısa</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">1.94</td>
+<td style="text-align: right;">151</td>
+<td style="text-align: right;">7.81</td>
+<td style="text-align: right;">7.86</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Kısa</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">2.02</td>
+<td style="text-align: right;">152</td>
+<td style="text-align: right;">7.76</td>
+<td style="text-align: right;">7.66</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Kısa</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">4.06</td>
+<td style="text-align: right;">185</td>
+<td style="text-align: right;">9.11</td>
+<td style="text-align: right;">11.38</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Kısa</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">4.27</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">9.13</td>
+<td style="text-align: right;">11.32</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Uzun</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">2.58</td>
+<td style="text-align: right;">210</td>
+<td style="text-align: right;">6.80</td>
+<td style="text-align: right;">9.92</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Uzun</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">2.56</td>
+<td style="text-align: right;">217</td>
+<td style="text-align: right;">6.81</td>
+<td style="text-align: right;">9.95</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Uzun</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">4.94</td>
+<td style="text-align: right;">260</td>
+<td style="text-align: right;">7.78</td>
+<td style="text-align: right;">13.74</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Uzun</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">4.94</td>
+<td style="text-align: right;">257</td>
+<td style="text-align: right;">7.57</td>
+<td style="text-align: right;">13.66</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Kısa</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: right;">1.15</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: right;">7.59</td>
+<td style="text-align: right;">6.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Kısa</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: right;">1.21</td>
+<td style="text-align: right;">92</td>
+<td style="text-align: right;">7.67</td>
+<td style="text-align: right;">6.46</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Kısa</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: right;">3.04</td>
+<td style="text-align: right;">112</td>
+<td style="text-align: right;">8.92</td>
+<td style="text-align: right;">9.47</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Kısa</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: right;">2.96</td>
+<td style="text-align: right;">106</td>
+<td style="text-align: right;">9.05</td>
+<td style="text-align: right;">9.75</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Uzun</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: right;">1.76</td>
+<td style="text-align: right;">122</td>
+<td style="text-align: right;">7.28</td>
+<td style="text-align: right;">8.91</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Uzun</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: right;">1.68</td>
+<td style="text-align: right;">136</td>
+<td style="text-align: right;">7.05</td>
+<td style="text-align: right;">8.90</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Uzun</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: right;">3.68</td>
+<td style="text-align: right;">162</td>
+<td style="text-align: right;">8.34</td>
+<td style="text-align: right;">12.04</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Uzun</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: right;">3.63</td>
+<td style="text-align: right;">163</td>
+<td style="text-align: right;">8.17</td>
+<td style="text-align: right;">11.98</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Kısa</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: right;">1.45</td>
+<td style="text-align: right;">123</td>
+<td style="text-align: right;">8.14</td>
+<td style="text-align: right;">8.65</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Kısa</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: right;">1.49</td>
+<td style="text-align: right;">119</td>
+<td style="text-align: right;">8.14</td>
+<td style="text-align: right;">8.44</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Kısa</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: right;">3.58</td>
+<td style="text-align: right;">149</td>
+<td style="text-align: right;">9.31</td>
+<td style="text-align: right;">12.16</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Kısa</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: right;">3.61</td>
+<td style="text-align: right;">146</td>
+<td style="text-align: right;">9.50</td>
+<td style="text-align: right;">12.33</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Uzun</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: right;">1.93</td>
+<td style="text-align: right;">188</td>
+<td style="text-align: right;">7.21</td>
+<td style="text-align: right;">10.75</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: left;">Uzun</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: right;">2.08</td>
+<td style="text-align: right;">191</td>
+<td style="text-align: right;">7.18</td>
+<td style="text-align: right;">10.85</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Uzun</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: right;">4.34</td>
+<td style="text-align: right;">227</td>
+<td style="text-align: right;">8.08</td>
+<td style="text-align: right;">14.31</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Uzun</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: right;">4.26</td>
+<td style="text-align: right;">228</td>
+<td style="text-align: right;">8.06</td>
+<td style="text-align: right;">14.41</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>veri_ornek <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/03_m4_temiz_veri.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>veri_ornek <span class="ot">&lt;-</span> veri_ornek <span class="sc">|&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">A =</span> <span class="fu">factor</span>(A, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Dusuk"</span>, <span class="st">"Yuksek"</span>)),</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">B =</span> <span class="fu">factor</span>(B, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Kisa"</span>, <span class="st">"Uzun"</span>)),</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">C =</span> <span class="fu">factor</span>(C, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Dusuk"</span>, <span class="st">"Yuksek"</span>)),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">D =</span> <span class="fu">factor</span>(D, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Dusuk"</span>, <span class="st">"Yuksek"</span>)),</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">kombinasyon =</span> <span class="fu">str_c</span>(<span class="st">"A="</span>, A, <span class="st">" | B="</span>, B, <span class="st">" | C="</span>, C, <span class="st">" | D="</span>, D)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>eksik_deger_tablo <span class="sc">|&gt;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tablo_html</span>(<span class="st">"Ön işleme sonrası eksik değer kontrolü"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-sm caption-top small">
+<caption>Ön işleme sonrası eksik değer kontrolü</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Değişken</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Eksik değer sayısı</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Run</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Std</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rep</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">D</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sapma</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Toparlanma</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Skor</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Enerji</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">kombinasyon</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </section>
-<section id="ön-işleme" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="ön-işleme"><span class="header-section-number">2.4</span> Ön İşleme</h2>
-<p>xxxxxx</p>
+</section>
+<section id="keşifsel-veri-analizi" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Keşifsel Veri Analizi</h1>
+<p>İlk adımda veri setinin genel yapısı ve sayısal değişkenlerin temel özetleri incelenmiştir. Bu adım, hangi değişkenlerin karar açısından daha belirleyici olabileceğini anlamak için kullanılmıştır.</p>
+<p>Keşifsel veri analizi, bu projede yalnızca tablo üretmek için değil, sonraki grafik ve karar adımlarını yönlendirmek için kullanılmıştır. Ortalama, minimum ve maksimum değerler incelenerek değişkenlerin hangi aralıkta değiştiği görülmüştür. Böylece örneğin gerçekçilik skoru yüksek olan ayarların enerji yükü bakımından da kabul edilebilir olup olmadığı tartışılabilir hale gelmiştir.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-sm caption-top small">
+<caption>Sayısal değişkenlerin genel özeti</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;" data-quarto-table-cell-role="th">Gözlem sayısı</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Sapma ort.</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Sapma min.</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Sapma maks.</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Toparlanma ort.</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Toparlanma min.</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Toparlanma maks.</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Skor ort.</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Skor min.</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Skor maks.</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Enerji ort.</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Enerji min.</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Enerji maks.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">2.85</td>
+<td style="text-align: right;">1.15</td>
+<td style="text-align: right;">4.94</td>
+<td style="text-align: right;">161.62</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: right;">260</td>
+<td style="text-align: right;">7.93</td>
+<td style="text-align: right;">6.8</td>
+<td style="text-align: right;">9.5</td>
+<td style="text-align: right;">9.95</td>
+<td style="text-align: right;">5.7</td>
+<td style="text-align: right;">14.41</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Faktör seviyelerine göre ortalamalar incelendiğinde, özellikle sürüş seviyesi ve darbe süresinin sapma, toparlanma ve gerçekçilik skoru üzerinde belirgin farklar oluşturduğu görülmektedir.</p>
+<p>Bu tablo, her faktörün tek başına ortalama etkisini görmeye yardımcı olur. Ancak faktörlerin birlikte çalıştığı unutulmamalıdır. Bir ayarın iyi veya kötü olarak sınıflandırılması yalnızca sürüş seviyesi ya da darbe süresine bağlı değildir; kütle ve sönümleme seviyesi de sonuçları değiştirebilir. Bu nedenle grafiklerle analiz bölümünde değişkenler birlikte yorumlanmıştır.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-sm caption-top small">
+<caption>Faktör seviyelerine göre ortalama yanıtlar</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Faktör</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Seviye</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Ortalama sapma</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Ortalama toparlanma</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Ortalama skor</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Ortalama enerji</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Aktüatör sürüşü</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">1.82</td>
+<td style="text-align: right;">145.38</td>
+<td style="text-align: right;">7.34</td>
+<td style="text-align: right;">8.26</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Aktüatör sürüşü</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: right;">3.88</td>
+<td style="text-align: right;">177.88</td>
+<td style="text-align: right;">8.52</td>
+<td style="text-align: right;">11.64</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Darbe süresi</td>
+<td style="text-align: left;">Kısa</td>
+<td style="text-align: right;">2.52</td>
+<td style="text-align: right;">131.31</td>
+<td style="text-align: right;">8.36</td>
+<td style="text-align: right;">8.81</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Darbe süresi</td>
+<td style="text-align: left;">Uzun</td>
+<td style="text-align: right;">3.18</td>
+<td style="text-align: right;">191.94</td>
+<td style="text-align: right;">7.50</td>
+<td style="text-align: right;">11.09</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hareketli kütle</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">2.58</td>
+<td style="text-align: right;">136.81</td>
+<td style="text-align: right;">7.84</td>
+<td style="text-align: right;">8.82</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hareketli kütle</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: right;">3.13</td>
+<td style="text-align: right;">186.44</td>
+<td style="text-align: right;">8.02</td>
+<td style="text-align: right;">11.09</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sönümleme</td>
+<td style="text-align: left;">Düşük</td>
+<td style="text-align: right;">3.09</td>
+<td style="text-align: right;">176.25</td>
+<td style="text-align: right;">7.75</td>
+<td style="text-align: right;">9.54</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sönümleme</td>
+<td style="text-align: left;">Yüksek</td>
+<td style="text-align: right;">2.62</td>
+<td style="text-align: right;">147.00</td>
+<td style="text-align: right;">8.11</td>
+<td style="text-align: right;">10.37</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Bu bölümdeki tablolar, Grafik 1’in temelini oluşturmaktadır. Önce her faktör seviyesi ve her kombinasyon için sapma, toparlanma, gerçekçilik skoru ve enerji değerleri özetlenmiştir. Daha sonra özellikle <code>Skor</code> değişkeni kullanılarak her faktör kombinasyonunun ortalama gerçekçilik skoru hesaplanmıştır. Grafik 1, bu hesaplanan ortalama gerçekçilik skorlarını görselleştirerek hangi ayar kombinasyonlarının kullanıcı algısı açısından daha güçlü göründüğünü karşılaştırmalı biçimde göstermektedir.</p>
+</section>
+<section id="grafiklerle-analiz" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Grafiklerle Analiz</h1>
+<p>Bu bölümde grafiklerde ve tablolarda ortak bir yeşil/teal renk standardı kullanılmıştır. Koyu yeşil ana vurgu ve başlık rengini, canlı yeşil güçlü sonuçları, mint tonu orta seviyedeki durumları, nötr yeşil-gri ton ise daha düşük performans gösteren adayları temsil etmektedir. Böylece farklı grafiklerde kullanılan renklerin aynı görsel dil içinde okunması amaçlanmıştır.</p>
+<section id="grafik-1-faktör-kombinasyonlarına-göre-gerçekçilik-skoru" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="grafik-1-faktör-kombinasyonlarına-göre-gerçekçilik-skoru"><span class="header-section-number">4.1</span> Grafik 1: Faktör Kombinasyonlarına Göre Gerçekçilik Skoru</h2>
+<p>Grafiklerde kullanılan kısaltmalar veri setindeki faktörleri temsil etmektedir: <code>A</code> aktüatör sürüş seviyesini, <code>B</code> darbe süresini, <code>C</code> hareketli kütle seviyesini ve <code>D</code> sönümleme seviyesini ifade etmektedir. Örneğin <code>A:Yüksek | B:Kısa | C:Yüksek | D:Yüksek</code> ifadesi; aktüatör sürüşünün yüksek, darbe süresinin kısa, hareketli kütlenin yüksek ve sönümlemenin yüksek olduğu ayar kombinasyonunu göstermektedir.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="outputs/figures/grafik_01_gercekcilik_skoru.png" class="img-fluid figure-img"></p>
+<figcaption>Faktör kombinasyonlarına göre ortalama gerçekçilik skoru</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Bu grafik, gerçekçilik skorunun faktör kombinasyonlarına göre değiştiğini göstermektedir. En yüksek skorlar genellikle sürüş seviyesinin yüksek ve darbe süresinin kısa olduğu kombinasyonlarda ortaya çıkmaktadır. Bu durum, sentetik senaryoda geri tepme hissinin güçlü fakat kontrol edilebilir olduğu ayarların daha olumlu değerlendirildiğini göstermektedir.</p>
+<p>Grafik aynı zamanda tüm kombinasyonların birbirine yakın performans göstermediğini de ortaya koymaktadır. Bazı ayarlar yüksek gerçekçilik sağlarken bazıları belirgin biçimde geride kalmaktadır. Bu fark, karar vericinin yalnızca faktör seviyelerini tek tek değil, kombinasyon mantığıyla değerlendirmesi gerektiğini göstermektedir.</p>
+<p>Grafik 1’de üst sıralarda yer alan kombinasyonlar incelendiğinde, yüksek aktüatör sürüş seviyesinin gerçekçilik algısını artıran önemli bir unsur olduğu görülmektedir. Ancak yalnızca sürüş seviyesinin yüksek olması yeterli değildir; darbe süresinin kısa olması da ayarın daha dengeli algılanmasına katkı sağlamaktadır. Uzun darbe süresi kullanılan bazı kombinasyonlarda gerçekçilik skoru düşmektedir. Bu durum, geri tepme etkisinin güçlü olmasının yanında süresinin de kontrol edilebilir olması gerektiğini göstermektedir.</p>
+<p>Kütle ve sönümleme seviyeleri ise üst sıralardaki kombinasyonların kendi içindeki sıralamasını değiştirmektedir. Özellikle yüksek sönümleme, geri tepme sonrası sistemin daha kontrollü davranmasına katkı sunduğu için gerçekçilik algısını dolaylı olarak destekleyebilir. Bu nedenle Grafik 1, tek bir faktörün etkisinden çok faktörlerin birlikte oluşturduğu ayar profilinin önemli olduğunu göstermektedir.</p>
+</section>
+<section id="grafik-2-sapma-ve-toparlanma-süresi-ilişkisi" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="grafik-2-sapma-ve-toparlanma-süresi-ilişkisi"><span class="header-section-number">4.2</span> Grafik 2: Sapma ve Toparlanma Süresi İlişkisi</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="outputs/figures/grafik_02_sapma_toparlanma.png" class="img-fluid figure-img"></p>
+<figcaption>Sapma ve toparlanma süresi ilişkisi</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Sapma ile toparlanma süresi birlikte incelendiğinde, daha yüksek sapma üreten ayarların her zaman daha iyi olmadığı görülmektedir. Çünkü yüksek sapma, toparlanma süresini uzatarak kullanıcı kontrolünü zorlaştırabilir. Bu nedenle karar yalnızca tek bir değişkene göre verilmemelidir.</p>
+<p>Bu grafik iş analitiği açısından önemli bir denge problemini göstermektedir. Eğitim simülatöründe sapmanın çok düşük olması gerçekçilik hissini zayıflatabilir; ancak sapmanın çok yüksek olması da kullanıcının hedefe geri dönmesini zorlaştırabilir. Bu nedenle ideal ayar, yüksek sapma üreten değil, yeterli sapma ile makul toparlanma süresini birlikte sağlayan ayardır.</p>
+<p>Grafik 2’de noktaların konumu, her deney koşulunda sapma ve toparlanma süresinin birlikte nasıl değiştiğini göstermektedir. Renk tonları gerçekçilik skorunu temsil ettiği için yalnızca eksenlere değil, noktanın rengine de bakmak gerekir. Daha koyu renkli noktalar daha yüksek gerçekçilik skoruna karşılık gelmektedir. Bu sayede, yüksek gerçekçilik skoru sağlayan ayarların aynı zamanda kabul edilebilir toparlanma süresine sahip olup olmadığı görsel olarak değerlendirilebilir.</p>
+<p>Grafikte görülen temel çıkarım, kararın tek boyutlu olmadığıdır. Sağ tarafa doğru gidildikçe sapma artmakta, yukarı doğru gidildikçe toparlanma süresi uzamaktadır. İdeal bölge, çok düşük sapmanın olmadığı fakat toparlanma süresinin de aşırı yükselmediği orta-üst denge alanıdır. Bu nedenle Grafik 2, sonraki çoklu yanıt kalite indeksinin neden gerekli olduğunu desteklemektedir: çünkü gerçekçilik, sapma ve toparlanma aynı anda değerlendirilmeden güvenilir bir karar önerisi üretmek zordur.</p>
+</section>
+<section id="grafik-3-sönümleme-seviyesine-göre-toparlanma-süresi" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="grafik-3-sönümleme-seviyesine-göre-toparlanma-süresi"><span class="header-section-number">4.3</span> Grafik 3: Sönümleme Seviyesine Göre Toparlanma Süresi</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="outputs/figures/grafik_03_toparlanma_boxplot.png" class="img-fluid figure-img"></p>
+<figcaption>Sönümleme seviyesine göre toparlanma süresi</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Boxplot grafiği, sönümleme seviyesinin toparlanma süresi üzerindeki etkisini görsel olarak karşılaştırmaktadır. Yüksek sönümleme seviyesi, geri tepme sonrası sistemin daha kontrollü davranmasına yardımcı olan bir faktör olarak yorumlanabilir.</p>
+<p>Kutu grafiği dağılımı göstermesi açısından özellikle yararlıdır. Sadece ortalamaya bakmak yerine, toparlanma süresinin hangi aralıkta değiştiği ve değerlerin ne kadar yayıldığı görülebilir. Bu da karar sürecinde kararlılık ve tutarlılık açısından ek bilgi sağlar.</p>
+</section>
+<section id="grafik-4-enerji-yükü-ve-gerçekçilik-skoru-ilişkisi" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="grafik-4-enerji-yükü-ve-gerçekçilik-skoru-ilişkisi"><span class="header-section-number">4.4</span> Grafik 4: Enerji Yükü ve Gerçekçilik Skoru İlişkisi</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="outputs/figures/grafik_04_enerji_skor.png" class="img-fluid figure-img"></p>
+<figcaption>Enerji yükü ve gerçekçilik skoru ilişkisi</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Enerji yükü ile gerçekçilik skoru arasında doğrudan ve tek yönlü bir karar vermek uygun değildir. Bazı ayarlar daha yüksek gerçekçilik skoru üretse de enerji yükü de artabilmektedir. Bu nedenle proje kapsamında enerji yükü, karar skorunda dengeleyici bir kriter olarak ele alınmıştır.</p>
+<p>Bu bölümde amaç, “en gerçekçi his” ile “uygulanabilir enerji yükü” arasındaki ilişkiyi tartışmaktır. Gerçek bir sistemde enerji yükünün artması batarya kullanımı, aktüatör ısınması veya uzun dönem güvenilirlik gibi konularda risk oluşturabilir. Bu nedenle gerçekçilik skoru yüksek olan bir ayar, enerji yükü çok yüksekse doğrudan en iyi seçenek olarak kabul edilmemelidir.</p>
+</section>
+<section id="grafik-5-faktör-seviyelerine-göre-ortalama-skor" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="grafik-5-faktör-seviyelerine-göre-ortalama-skor"><span class="header-section-number">4.5</span> Grafik 5: Faktör Seviyelerine Göre Ortalama Skor</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="outputs/figures/grafik_05_faktor_skor.png" class="img-fluid figure-img"></p>
+<figcaption>Faktör seviyelerine göre ortalama gerçekçilik skoru</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Bu grafik, her faktörün seviyelerine göre ortalama gerçekçilik skorunu göstermektedir. Ders notlarında vurgulanan görselleştirme prensiplerine uygun olarak, kategorik seviyeler grafik üzerinden karşılaştırılmış ve karar açısından anlamlı farklar aranmıştır.</p>
+<p>Grafik, faktör seviyelerinin etkisini sade bir biçimde okumaya yardımcı olur. Bu tür bir görselleştirme, karar vericiye hangi faktörlerin daha dikkatle izlenmesi gerektiğini gösterir. Özellikle gerçekçilik skoru açısından güçlü görünen seviyeler, sonraki çoklu yanıt değerlendirmesinde diğer kriterlerle birlikte yeniden ele alınmıştır.</p>
 </section>
 </section>
-<section id="analiz" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Analiz</h1>
-<p>xxxxxx</p>
-<section id="keşifsel-veri-analizi" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="keşifsel-veri-analizi"><span class="header-section-number">3.1</span> Keşifsel Veri Analizi</h2>
-<p>xxxxxx</p>
+<section id="çoklu-yanıt-değerlendirmesi" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Çoklu Yanıt Değerlendirmesi</h1>
+<p>Tek bir performans göstergesine bakmak yerine sapma, toparlanma süresi, gerçekçilik skoru ve enerji yükü birlikte değerlendirilmiştir. Bu amaçla her aday kombinasyon için 0-100 aralığında bir kalite indeksi hesaplanmıştır.</p>
+<p>Kalite indeksinde amaç, farklı yönlerde yorumlanan değişkenleri ortak bir karar ölçüsüne dönüştürmektir. Gerçekçilik skorunun yüksek olması olumlu kabul edilirken, toparlanma süresi ve enerji yükünün daha düşük olması tercih edilmiştir. Sapma için ise hedefe yakınlık mantığı kullanılmıştır; çünkü sapmanın ne çok düşük ne de aşırı yüksek olması istenmektedir.</p>
+<div class="cell" data-tbl-cap="Kalite indeksine göre en iyi aday kombinasyonlar">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>karar_tablosu <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(kombinasyon_kisa, sapma_ort, toparlanma_ort, skor_ort, enerji_ort, kalite_indeksi, karar_sinifi) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">8</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Faktör kombinasyonu</span><span class="st">`</span> <span class="ot">=</span> kombinasyon_kisa,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Ortalama sapma</span><span class="st">`</span> <span class="ot">=</span> sapma_ort,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Ortalama toparlanma</span><span class="st">`</span> <span class="ot">=</span> toparlanma_ort,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Ortalama skor</span><span class="st">`</span> <span class="ot">=</span> skor_ort,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Ortalama enerji</span><span class="st">`</span> <span class="ot">=</span> enerji_ort,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Kalite indeksi</span><span class="st">`</span> <span class="ot">=</span> kalite_indeksi,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Karar sınıfı</span><span class="st">`</span> <span class="ot">=</span> karar_sinifi</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tablo_html</span>(<span class="st">"Kalite indeksine göre en iyi aday kombinasyonlar"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-sm caption-top small">
+<caption>Kalite indeksine göre en iyi aday kombinasyonlar</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Faktör kombinasyonu</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Ortalama sapma</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Ortalama toparlanma</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Ortalama skor</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Ortalama enerji</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Kalite indeksi</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Karar sınıfı</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A:Yüksek | B:Kısa | C:Yüksek | D:Yüksek</td>
+<td style="text-align: right;">3.60</td>
+<td style="text-align: right;">147.5</td>
+<td style="text-align: right;">9.40</td>
+<td style="text-align: right;">12.24</td>
+<td style="text-align: right;">80.07</td>
+<td style="text-align: left;">Güçlü aday</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A:Yüksek | B:Kısa | C:Düşük | D:Yüksek</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: right;">109.0</td>
+<td style="text-align: right;">8.98</td>
+<td style="text-align: right;">9.61</td>
+<td style="text-align: right;">78.13</td>
+<td style="text-align: left;">Güçlü aday</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A:Yüksek | B:Kısa | C:Düşük | D:Düşük</td>
+<td style="text-align: right;">3.29</td>
+<td style="text-align: right;">136.0</td>
+<td style="text-align: right;">8.66</td>
+<td style="text-align: right;">8.84</td>
+<td style="text-align: right;">75.24</td>
+<td style="text-align: left;">Güçlü aday</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A:Yüksek | B:Kısa | C:Yüksek | D:Düşük</td>
+<td style="text-align: right;">4.16</td>
+<td style="text-align: right;">182.5</td>
+<td style="text-align: right;">9.12</td>
+<td style="text-align: right;">11.35</td>
+<td style="text-align: right;">66.20</td>
+<td style="text-align: left;">İzlenebilir aday</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A:Yüksek | B:Uzun | C:Düşük | D:Yüksek</td>
+<td style="text-align: right;">3.65</td>
+<td style="text-align: right;">162.5</td>
+<td style="text-align: right;">8.25</td>
+<td style="text-align: right;">12.01</td>
+<td style="text-align: right;">64.37</td>
+<td style="text-align: left;">İzlenebilir aday</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A:Yüksek | B:Uzun | C:Düşük | D:Düşük</td>
+<td style="text-align: right;">4.14</td>
+<td style="text-align: right;">199.5</td>
+<td style="text-align: right;">7.99</td>
+<td style="text-align: right;">11.03</td>
+<td style="text-align: right;">51.57</td>
+<td style="text-align: left;">Zayıf aday</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A:Düşük | B:Kısa | C:Yüksek | D:Yüksek</td>
+<td style="text-align: right;">1.47</td>
+<td style="text-align: right;">121.0</td>
+<td style="text-align: right;">8.14</td>
+<td style="text-align: right;">8.54</td>
+<td style="text-align: right;">49.48</td>
+<td style="text-align: left;">Zayıf aday</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A:Düşük | B:Kısa | C:Yüksek | D:Düşük</td>
+<td style="text-align: right;">1.98</td>
+<td style="text-align: right;">151.5</td>
+<td style="text-align: right;">7.78</td>
+<td style="text-align: right;">7.76</td>
+<td style="text-align: right;">48.55</td>
+<td style="text-align: left;">Zayıf aday</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="outputs/figures/grafik_06_coklu_yanit_skoru.png" class="img-fluid figure-img"></p>
+<figcaption>Çoklu yanıt kalite indeksine göre aday kombinasyonlar</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Çoklu yanıt kalite indeksine göre en güçlü aday kombinasyon <code>A=Yuksek</code>, <code>B=Kisa</code>, <code>C=Yuksek</code>, <code>D=Yuksek</code> olarak belirlenmiştir. Bu ayar, sentetik senaryo içinde yüksek gerçekçilik skoru sağlarken sapma, toparlanma ve enerji yükü arasında daha dengeli bir sonuç vermektedir.</p>
+<p>İlk üç adayın tamamında sürüş seviyesinin yüksek ve darbe süresinin kısa olması dikkat çekicidir. Bu sonuç, sentetik senaryoda güçlü fakat kısa süreli bir etkinin daha avantajlı olduğunu düşündürmektedir. Bununla birlikte kütle ve sönümleme seviyeleri adayların sıralamasını değiştirmektedir. Bu nedenle karar önerisi tek bir faktöre indirgenmemiş, tüm yanıtların birlikte değerlendirildiği kalite indeksi üzerinden yapılmıştır.</p>
 </section>
-<section id="trend-analizi" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="trend-analizi"><span class="header-section-number">3.2</span> Trend Analizi</h2>
-<p>xxxxxx</p>
+<section id="sonuçlar-ve-ana-çıkarımlar" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Sonuçlar ve Ana Çıkarımlar</h1>
+<p>Bu çalışmada M4 elektronik eğitim simülatörü için sentetik deney verisi üzerinden R tabanlı bir iş analitiği akışı kurulmuştur. Veri okuma, düzenleme, özetleme, görselleştirme ve çoklu kriterli karar skoru adımları birlikte kullanılmıştır.</p>
+<p>Ana çıkarımlar:</p>
+<ul>
+<li>En yüksek geri tepme hissi her zaman en iyi ayar anlamına gelmemektedir.</li>
+<li>Toparlanma süresi ve enerji yükü karar sürecinde mutlaka dikkate alınmalıdır.</li>
+<li>Sentetik senaryo içinde en dengeli aday <code>A=Yuksek</code>, <code>B=Kisa</code>, <code>C=Yuksek</code>, <code>D=Yuksek</code> kombinasyonudur.</li>
+<li>R ile hazırlanan bu analiz akışı, gerçek test verisi elde edildiğinde aynı şekilde tekrar çalıştırılabilir.</li>
+</ul>
+<p>Genel olarak bu çalışma, iş analitiği yaklaşımının yalnızca geçmiş verileri özetlemekten ibaret olmadığını göstermektedir. Veri düzenleme, görselleştirme ve karar skoru adımları birlikte kullanıldığında, karmaşık görünen teknik bir problem daha anlaşılır bir karar problemine dönüştürülebilmektedir. Bu yönüyle proje, MUY665 dersinde ele alınan tanımlayıcı analitik ve karar desteği yaklaşımını uygulamalı bir örnek üzerinden göstermektedir.</p>
 </section>
-<section id="model-uydurma" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="model-uydurma"><span class="header-section-number">3.3</span> Model Uydurma</h2>
-<p>xxxxxx</p>
+<section id="kısıtlar-ve-etik-not" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Kısıtlar ve Etik Not</h1>
+<p>Bu çalışma gerçek saha veya laboratuvar test verisi içermemektedir. Veri seti sentetik/senaryo tabanlı olduğu için bulgular gerçek bir fiziksel sistemin kesin performans kanıtı olarak yorumlanmamalıdır. Gerçek uygulama için pilot test, ölçüm sistemi analizi ve fiziksel doğrulama gereklidir.</p>
+<p>Bu proje kapsamında yapay zeka desteği; proje planının düzenlenmesi, R kod akışının yapılandırılması, Quarto rapor taslağının hazırlanması ve yazılı anlatımın iyileştirilmesi amacıyla kullanılmıştır.</p>
 </section>
-<section id="sonuçlar" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="sonuçlar"><span class="header-section-number">3.4</span> Sonuçlar</h2>
-<p>xxxxxx</p>
-</section>
-</section>
-<section id="sonuçlar-ve-ana-çıkarımlar" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Sonuçlar ve Ana Çıkarımlar</h1>
-<p>xxxxxx</p>
+<section id="kaynaklar" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Kaynaklar</h1>
+<ul>
+<li>MUY665 İş Analitiği ders notları, 2025-2026 Bahar Dönemi.</li>
+<li>MUY665 2023-2024 Bahar dönemi örnek proje sayfaları.</li>
+<li>Quarto dokümantasyonu: <a href="https://quarto.org/" class="uri">https://quarto.org/</a></li>
+<li>R paketleri: <code>readr</code>, <code>dplyr</code>, <code>tidyr</code>, <code>stringr</code>, <code>ggplot2</code>.</li>
+</ul>
 
+
+<!-- -->
 
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -487,6 +1409,57 @@ ul.task-list li input[type="checkbox"] {
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -816,7 +1789,418 @@ ul.task-list li input[type="checkbox"] {
       }
     }
   });
-  </script>
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Elektronik Eğitim Simülatöründe Geri Tepme Davranışının Sentetik Veri ile İş Analitiği"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "MUY665 İş Analitiği Dönem Projesi"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - "Eylül Işıl Altıparmak"</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">  - "Gizem Çetin"</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">  - "Selcan İşlek"</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2026-06-07"</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-location: left</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: simplex</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: true</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: kurulum</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>ham_veri <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/02_m4_sentetik_ham_veri.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>veri <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/03_m4_temiz_veri.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>uzun_veri <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/04_m4_uzun_veri.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>degisken_ozeti <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"outputs/tables/01_degisken_ozeti.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>faktor_ozetleri <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"outputs/tables/02_faktor_ozetleri.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>kombinasyon_ozetleri <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"outputs/tables/03_kombinasyon_ozetleri.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>karar_tablosu <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"outputs/tables/04_coklu_yanit_karar_tablosu.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>tablo_html <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">caption =</span> <span class="cn">NULL</span>, <span class="at">digits =</span> <span class="dv">2</span>) {</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>    x,</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">format =</span> <span class="st">"html"</span>,</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> caption,</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">digits =</span> digits,</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.attr =</span> <span class="st">'class="table table-striped table-hover table-sm"'</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>duzey_tr <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">recode</span>(x, <span class="st">"Dusuk"</span> <span class="ot">=</span> <span class="st">"Düşük"</span>, <span class="st">"Yuksek"</span> <span class="ot">=</span> <span class="st">"Yüksek"</span>, <span class="st">"Kisa"</span> <span class="ot">=</span> <span class="st">"Kısa"</span>, <span class="st">"Uzun"</span> <span class="ot">=</span> <span class="st">"Uzun"</span>)</span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>ham_veri_tablo <span class="ot">&lt;-</span> ham_veri <span class="sc">|&gt;</span></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(</span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Deney sırası</span><span class="st">`</span> <span class="ot">=</span> Run,</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Standart sıra</span><span class="st">`</span> <span class="ot">=</span> Std,</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Tekrar</span><span class="st">`</span> <span class="ot">=</span> Rep,</span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">A - Aktüatör sürüşü</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">duzey_tr</span>(A),</span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">B - Darbe süresi</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">duzey_tr</span>(B),</span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">C - Hareketli kütle</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">duzey_tr</span>(C),</span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">D - Sönümleme</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">duzey_tr</span>(D),</span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Sapma</span><span class="st">`</span> <span class="ot">=</span> Sapma,</span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Toparlanma</span><span class="st">`</span> <span class="ot">=</span> Toparlanma,</span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Gerçekçilik skoru</span><span class="st">`</span> <span class="ot">=</span> Skor,</span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Enerji yükü</span><span class="st">`</span> <span class="ot">=</span> Enerji</span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>veri_onizleme_tablo <span class="ot">&lt;-</span> ham_veri_tablo <span class="sc">|&gt;</span> <span class="fu">head</span>(<span class="dv">8</span>)</span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>degisken_ozeti_tablo <span class="ot">&lt;-</span> degisken_ozeti <span class="sc">|&gt;</span></span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(</span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Gözlem sayısı</span><span class="st">`</span> <span class="ot">=</span> gozlem_sayisi,</span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Sapma ort.</span><span class="st">`</span> <span class="ot">=</span> sapma_ortalama,</span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Sapma min.</span><span class="st">`</span> <span class="ot">=</span> sapma_min,</span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Sapma maks.</span><span class="st">`</span> <span class="ot">=</span> sapma_max,</span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Toparlanma ort.</span><span class="st">`</span> <span class="ot">=</span> toparlanma_ortalama,</span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Toparlanma min.</span><span class="st">`</span> <span class="ot">=</span> toparlanma_min,</span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Toparlanma maks.</span><span class="st">`</span> <span class="ot">=</span> toparlanma_max,</span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Skor ort.</span><span class="st">`</span> <span class="ot">=</span> skor_ortalama,</span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Skor min.</span><span class="st">`</span> <span class="ot">=</span> skor_min,</span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Skor maks.</span><span class="st">`</span> <span class="ot">=</span> skor_max,</span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Enerji ort.</span><span class="st">`</span> <span class="ot">=</span> enerji_ortalama,</span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Enerji min.</span><span class="st">`</span> <span class="ot">=</span> enerji_min,</span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Enerji maks.</span><span class="st">`</span> <span class="ot">=</span> enerji_max</span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a>faktor_ozetleri_tablo <span class="ot">&lt;-</span> faktor_ozetleri <span class="sc">|&gt;</span></span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a>    <span class="at">faktor =</span> <span class="fu">recode</span>(</span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a>      faktor,</span>
+<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a>      <span class="st">"A"</span> <span class="ot">=</span> <span class="st">"Aktüatör sürüşü"</span>,</span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a>      <span class="st">"B"</span> <span class="ot">=</span> <span class="st">"Darbe süresi"</span>,</span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a>      <span class="st">"C"</span> <span class="ot">=</span> <span class="st">"Hareketli kütle"</span>,</span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a>      <span class="st">"D"</span> <span class="ot">=</span> <span class="st">"Sönümleme"</span></span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a>    <span class="at">seviye =</span> <span class="fu">duzey_tr</span>(seviye)</span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(</span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Faktör</span><span class="st">`</span> <span class="ot">=</span> faktor,</span>
+<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Seviye</span><span class="st">`</span> <span class="ot">=</span> seviye,</span>
+<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Ortalama sapma</span><span class="st">`</span> <span class="ot">=</span> sapma_ort,</span>
+<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Ortalama toparlanma</span><span class="st">`</span> <span class="ot">=</span> toparlanma_ort,</span>
+<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Ortalama skor</span><span class="st">`</span> <span class="ot">=</span> skor_ort,</span>
+<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Ortalama enerji</span><span class="st">`</span> <span class="ot">=</span> enerji_ort</span>
+<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a>eksik_deger_tablo <span class="ot">&lt;-</span> veri <span class="sc">|&gt;</span></span>
+<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(.x)))) <span class="sc">|&gt;</span></span>
+<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="fu">everything</span>(), <span class="at">names_to =</span> <span class="st">"Değişken"</span>, <span class="at">values_to =</span> <span class="st">"Eksik değer sayısı"</span>)</span>
+<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
+<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;style&gt;</span></span>
+<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a><span class="in">:root {</span></span>
+<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a><span class="in">  --m4-koyu: #1F3D3A;</span></span>
+<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a><span class="in">  --m4-yesil: #2A9D8F;</span></span>
+<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a><span class="in">  --m4-mint: #8FD6C8;</span></span>
+<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a><span class="in">  --m4-acik: #D8F3EC;</span></span>
+<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a><span class="in">  --m4-nötr: #5B7C78;</span></span>
+<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a><span class="in">table.table {</span></span>
+<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a><span class="in">  border: 1px solid rgba(31, 61, 58, 0.18);</span></span>
+<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a><span class="in">  border-radius: 6px;</span></span>
+<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a><span class="in">  overflow: hidden;</span></span>
+<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a><span class="in">  font-size: 0.92rem;</span></span>
+<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a><span class="in">table.table thead th {</span></span>
+<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a><span class="in">  background: var(--m4-koyu);</span></span>
+<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a><span class="in">  color: #ffffff;</span></span>
+<span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a><span class="in">  border-color: var(--m4-koyu);</span></span>
+<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a><span class="in">table.table-striped &gt; tbody &gt; tr:nth-of-type(odd) &gt; * {</span></span>
+<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a><span class="in">  background-color: rgba(216, 243, 236, 0.60);</span></span>
+<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-143"><a href="#cb3-143" aria-hidden="true" tabindex="-1"></a><span class="in">table.table-hover &gt; tbody &gt; tr:hover &gt; * {</span></span>
+<span id="cb3-144"><a href="#cb3-144" aria-hidden="true" tabindex="-1"></a><span class="in">  background-color: rgba(143, 214, 200, 0.28);</span></span>
+<span id="cb3-145"><a href="#cb3-145" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb3-146"><a href="#cb3-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-147"><a href="#cb3-147" aria-hidden="true" tabindex="-1"></a><span class="in">caption {</span></span>
+<span id="cb3-148"><a href="#cb3-148" aria-hidden="true" tabindex="-1"></a><span class="in">  color: var(--m4-koyu);</span></span>
+<span id="cb3-149"><a href="#cb3-149" aria-hidden="true" tabindex="-1"></a><span class="in">  font-weight: 700;</span></span>
+<span id="cb3-150"><a href="#cb3-150" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb3-151"><a href="#cb3-151" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/style&gt;</span></span>
+<span id="cb3-152"><a href="#cb3-152" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-153"><a href="#cb3-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-154"><a href="#cb3-154" aria-hidden="true" tabindex="-1"></a><span class="fu"># Proje Genel Bakış ve Kapsamı</span></span>
+<span id="cb3-155"><a href="#cb3-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-156"><a href="#cb3-156" aria-hidden="true" tabindex="-1"></a>Bu projede, mühimmat kullanmayan elektronik bir eğitim simülatöründe geri tepme davranışını temsil eden sentetik bir deney veri seti R programlama dili ile analiz edilmektedir. Elektronik eğitim simülatörlerinde temel amaç, kullanıcıya güvenli bir ortamda gerçekçi bir eğitim deneyimi sunmaktır. Bu tür sistemlerde geri tepme hissinin çok zayıf olması eğitim gerçekçiliğini azaltabilir; buna karşılık geri tepme davranışının çok sert, uzun süreli veya kontrolsüz olması kullanıcı deneyimini ve sistem güvenilirliğini olumsuz etkileyebilir.</span>
+<span id="cb3-157"><a href="#cb3-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-158"><a href="#cb3-158" aria-hidden="true" tabindex="-1"></a>Bu nedenle bu çalışmada geri tepme davranışı tek bir performans göstergesiyle değil, birden fazla kriterin birlikte değerlendirilmesiyle ele alınmıştır. Analizde sapma, toparlanma süresi, gerçekçilik skoru ve enerji yükü birlikte incelenmektedir. Sapma ve gerçekçilik skoru eğitim hissinin yeterliliğini temsil ederken, toparlanma süresi ve enerji yükü sistemin kontrol edilebilirliği ve uygulanabilirliği hakkında bilgi vermektedir.</span>
+<span id="cb3-159"><a href="#cb3-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-160"><a href="#cb3-160" aria-hidden="true" tabindex="-1"></a>Projenin temel karar sorusu şudur: Farklı faktör seviyeleri arasında, sentetik deney senaryosu içinde en dengeli geri tepme davranışını hangi ayar kombinasyonu sağlamaktadır? Bu soruya yanıt verebilmek için faktör seviyeleri arasındaki farklar özet tablolar, grafikler ve çoklu yanıt kalite indeksi yardımıyla incelenmiştir.</span>
+<span id="cb3-161"><a href="#cb3-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-162"><a href="#cb3-162" aria-hidden="true" tabindex="-1"></a>Çalışma kapsamında dört temel faktör ele alınmıştır: aktüatör sürüş seviyesi, darbe süresi, hareketli kütle seviyesi ve sönümleme seviyesi. Bu faktörlerin her biri iki seviyede değerlendirilmiş ve her kombinasyon için iki tekrar olacak şekilde toplam 32 gözlemden oluşan bir sentetik veri seti kullanılmıştır.</span>
+<span id="cb3-163"><a href="#cb3-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-164"><a href="#cb3-164" aria-hidden="true" tabindex="-1"></a>Çalışmanın ana odağı ileri istatistiksel testlerden çok, MUY665 dersinde işlenen iş analitiği sürecini uygulamaktır. Bu nedenle proje; veri okuma, veri düzenleme, keşifsel veri analizi, görselleştirme, özet tablo oluşturma ve karar desteği adımları üzerinden ilerlemektedir. R tarafında <span class="in">`readr`</span>, <span class="in">`dplyr`</span>, <span class="in">`tidyr`</span>, <span class="in">`stringr`</span> ve <span class="in">`ggplot2`</span> paketleri kullanılarak ders notlarında yer alan temel veri analitiği yaklaşımları uygulanmıştır.</span>
+<span id="cb3-165"><a href="#cb3-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-166"><a href="#cb3-166" aria-hidden="true" tabindex="-1"></a>Veri seti sentetik/senaryo tabanlı olarak hazırlanmıştır, bulgular gerçek bir fiziksel sistemin kesin sonucu olarak yorumlanmamalıdır. Buna karşılık çalışma, gerçek test verisi elde edildiğinde aynı analiz akışının nasıl yeniden çalıştırılabileceğini gösteren tekrarlanabilir bir iş analitiği örneği sunmaktadır.</span>
+<span id="cb3-167"><a href="#cb3-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-168"><a href="#cb3-168" aria-hidden="true" tabindex="-1"></a><span class="fu"># Veri</span></span>
+<span id="cb3-169"><a href="#cb3-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-170"><a href="#cb3-170" aria-hidden="true" tabindex="-1"></a><span class="fu">## Veri Kaynağı</span></span>
+<span id="cb3-171"><a href="#cb3-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a>Bu çalışmada kullanılan veri seti gerçek saha veya test ölçümü değildir. Veri, mühimmat kullanmayan elektronik eğitim simülatörünün geri tepme davranışını temsil etmek amacıyla oluşturulmuş sentetik/senaryo tabanlı deney verisidir.</span>
+<span id="cb3-173"><a href="#cb3-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-174"><a href="#cb3-174" aria-hidden="true" tabindex="-1"></a>Bu nedenle bulgular, gerçek bir fiziksel sistemin kesin performans kanıtı olarak değil, R ile iş analitiği yöntemlerinin yeniden üretilebilir bir uygulaması olarak yorumlanmalıdır.</span>
+<span id="cb3-175"><a href="#cb3-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-176"><a href="#cb3-176" aria-hidden="true" tabindex="-1"></a>Veri kaynağının sentetik olarak seçilmesinin temel nedeni, gerçek bir prototip veya saha testinden ölçüm alınmamış olmasıdır. Bu durum, çalışmanın sınırlılığı olmakla birlikte aynı zamanda ders kapsamında öğrenilen R tabanlı veri analitiği sürecini kontrollü bir veri seti üzerinde uygulama olanağı sağlamaktadır. Bu nedenle veri seti, gerçek sistem davranışını birebir temsil eden bir ölçüm kaydı olarak değil, karar analitiği yaklaşımını göstermek için oluşturulmuş bir çalışma verisi olarak ele alınmıştır.</span>
+<span id="cb3-177"><a href="#cb3-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-178"><a href="#cb3-178" aria-hidden="true" tabindex="-1"></a><span class="fu">## Veri Hakkında Genel Bilgiler</span></span>
+<span id="cb3-179"><a href="#cb3-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-180"><a href="#cb3-180" aria-hidden="true" tabindex="-1"></a>Veri seti dört faktör ve dört yanıt değişkeninden oluşmaktadır. Dört faktörün her biri iki seviyede ele alınmış, her kombinasyon iki tekrar ile gözlemlenmiş ve toplam 32 gözlem elde edilmiştir.</span>
+<span id="cb3-181"><a href="#cb3-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-182"><a href="#cb3-182" aria-hidden="true" tabindex="-1"></a>Faktörler, sistem üzerinde değiştirilebilir ayarları temsil etmektedir:</span>
+<span id="cb3-183"><a href="#cb3-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-184"><a href="#cb3-184" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`A - Aktüatör sürüş seviyesi`</span>: Aktüatörün geri tepme etkisini oluşturmak için ne kadar güçlü çalıştırıldığını ifade eder. Düşük sürüş seviyesi daha yumuşak bir tepki üretirken, yüksek sürüş seviyesi daha belirgin bir geri tepme hissi oluşturabilir.</span>
+<span id="cb3-185"><a href="#cb3-185" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`B - Darbe süresi`</span>: Geri tepme etkisinin ne kadar süreyle uygulandığını gösterir. Kısa darbe süresi daha ani ve kontrollü bir etkiyi, uzun darbe süresi ise daha yayılmış ve toparlanması daha zor olabilecek bir etkiyi temsil eder.</span>
+<span id="cb3-186"><a href="#cb3-186" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`C - Hareketli kütle seviyesi`</span>: Simülatör içinde geri tepme hissini oluşturan hareketli parçanın kütle düzeyini temsil eder. Daha yüksek kütle, geri tepme hissini güçlendirebilir; ancak sistemin toparlanma davranışını da etkileyebilir.</span>
+<span id="cb3-187"><a href="#cb3-187" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`D - Sönümleme seviyesi`</span>: Geri tepme sonrası hareketin ne kadar hızlı bastırıldığını veya dengelendiğini ifade eder. Yüksek sönümleme, sistemin daha kontrollü biçimde toparlanmasına yardımcı olabilir.</span>
+<span id="cb3-188"><a href="#cb3-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-189"><a href="#cb3-189" aria-hidden="true" tabindex="-1"></a>Yanıt değişkenleri ise her deney koşulunda sistemin nasıl davrandığını ölçmek için kullanılan performans göstergeleridir:</span>
+<span id="cb3-190"><a href="#cb3-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-191"><a href="#cb3-191" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`Sapma`</span>: Geri tepme sonrasında nişan hattında veya simülatör ekseninde oluşan sapma düzeyini temsil eder. Çok düşük sapma gerçekçilik hissini azaltabilir; çok yüksek sapma ise kontrolü zorlaştırabilir.</span>
+<span id="cb3-192"><a href="#cb3-192" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`Toparlanma`</span>: Geri tepme etkisinden sonra sistemin yeniden kararlı hale gelmesi için gereken süreyi temsil eder. Daha düşük toparlanma süresi, kullanıcının bir sonraki harekete daha hızlı hazırlanabilmesi açısından avantajlıdır.</span>
+<span id="cb3-193"><a href="#cb3-193" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`Skor`</span>: Geri tepme davranışının kullanıcı tarafından ne kadar gerçekçi algılanabileceğini temsil eden sentetik bir değerlendirme skorudur. Bu değişkende yüksek değer daha olumlu kabul edilmiştir.</span>
+<span id="cb3-194"><a href="#cb3-194" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`Enerji`</span>: Geri tepme etkisini oluşturmak için gereken enerji yükünü temsil eder. Enerji değerinin çok yükselmesi, gerçek bir sistemde batarya tüketimi, ısınma veya mekanik zorlanma gibi konular açısından risk oluşturabilir.</span>
+<span id="cb3-195"><a href="#cb3-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-196"><a href="#cb3-196" aria-hidden="true" tabindex="-1"></a>Bu yapı, her faktör kombinasyonunun sistem davranışı üzerindeki etkisini karşılaştırmaya imkan verir. Örneğin yüksek sürüş seviyesi geri tepme hissini artırabilir; ancak aynı zamanda enerji yükünü veya toparlanma süresini de artırabilir. Benzer şekilde yüksek sönümleme, sistemin daha kontrollü toparlanmasına yardımcı olabilir fakat gerçekçilik algısı üzerindeki etkisi diğer faktörlerle birlikte değerlendirilmelidir. Bu nedenle veri seti, tek değişkenli bir sıralama yapmak yerine çok kriterli bir karar problemi olarak yorumlanmıştır.</span>
+<span id="cb3-197"><a href="#cb3-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-200"><a href="#cb3-200" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-201"><a href="#cb3-201" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: veri-yapisi</span></span>
+<span id="cb3-202"><a href="#cb3-202" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb3-203"><a href="#cb3-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-204"><a href="#cb3-204" aria-hidden="true" tabindex="-1"></a><span class="fu">tablo_html</span>(veri_onizleme_tablo, <span class="st">"Veri setinden ilk sekiz gözlem"</span>)</span>
+<span id="cb3-205"><a href="#cb3-205" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-206"><a href="#cb3-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-207"><a href="#cb3-207" aria-hidden="true" tabindex="-1"></a><span class="fu">## Veri Okuma ve Ön İşleme</span></span>
+<span id="cb3-208"><a href="#cb3-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-209"><a href="#cb3-209" aria-hidden="true" tabindex="-1"></a>Veriler CSV formatında R ortamına aktarılmıştır. Ders notlarında yer alan <span class="in">`readr`</span>, <span class="in">`dplyr`</span>, <span class="in">`tidyr`</span> ve <span class="in">`stringr`</span> paketleri kullanılarak veri okunmuş, faktör değişkenleri düzenlenmiş, kombinasyon etiketi oluşturulmuş ve grafikler için uzun formata çevrilmiştir.</span>
+<span id="cb3-210"><a href="#cb3-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-211"><a href="#cb3-211" aria-hidden="true" tabindex="-1"></a>Ön işleme aşamasında öncelikle veri setinde eksik değer olup olmadığı kontrol edilmiştir. Daha sonra <span class="in">`A`</span>, <span class="in">`B`</span>, <span class="in">`C`</span> ve <span class="in">`D`</span> değişkenleri karakter veri tipinden faktör yapısına dönüştürülmüştür. Bu dönüşüm önemlidir; çünkü bu değişkenler sayısal büyüklük değil, kategorik deney seviyelerini temsil etmektedir. Ayrıca grafiklerde ve özet tablolarda daha okunabilir bir yapı elde etmek için her satırda faktör kombinasyonunu gösteren ek bir etiket oluşturulmuştur.</span>
+<span id="cb3-212"><a href="#cb3-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-213"><a href="#cb3-213" aria-hidden="true" tabindex="-1"></a>Grafik ve özet analizlerde daha esnek çalışabilmek için veri seti uzun formata da çevrilmiştir. Böylece <span class="in">`Sapma`</span>, <span class="in">`Toparlanma`</span>, <span class="in">`Skor`</span> ve <span class="in">`Enerji`</span> değişkenleri aynı yapı içinde karşılaştırılabilir hale getirilmiştir. Bu adım, ders notlarında anlatılan tidy data yaklaşımına uygun bir düzenleme adımıdır.</span>
+<span id="cb3-214"><a href="#cb3-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-215"><a href="#cb3-215" aria-hidden="true" tabindex="-1"></a>Aşağıdaki tablo, analizde kullanılan 32 gözlemli ham sentetik veri setinin tamamını göstermektedir. Tabloda her satır bir deney koşulunu; faktör sütunları ilgili ayarı; son dört sütun ise bu ayar altında elde edilen sentetik yanıt değerlerini göstermektedir.</span>
+<span id="cb3-216"><a href="#cb3-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-219"><a href="#cb3-219" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-220"><a href="#cb3-220" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ham-veri-tablosu</span></span>
+<span id="cb3-221"><a href="#cb3-221" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb3-222"><a href="#cb3-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-223"><a href="#cb3-223" aria-hidden="true" tabindex="-1"></a><span class="fu">tablo_html</span>(ham_veri_tablo, <span class="st">"Analizde kullanılan ham sentetik veri seti"</span>)</span>
+<span id="cb3-224"><a href="#cb3-224" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-225"><a href="#cb3-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-228"><a href="#cb3-228" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-229"><a href="#cb3-229" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: veri-on-isleme-kodu</span></span>
+<span id="cb3-230"><a href="#cb3-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-231"><a href="#cb3-231" aria-hidden="true" tabindex="-1"></a>veri_ornek <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/03_m4_temiz_veri.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb3-232"><a href="#cb3-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-233"><a href="#cb3-233" aria-hidden="true" tabindex="-1"></a>veri_ornek <span class="ot">&lt;-</span> veri_ornek <span class="sc">|&gt;</span></span>
+<span id="cb3-234"><a href="#cb3-234" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb3-235"><a href="#cb3-235" aria-hidden="true" tabindex="-1"></a>    <span class="at">A =</span> <span class="fu">factor</span>(A, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Dusuk"</span>, <span class="st">"Yuksek"</span>)),</span>
+<span id="cb3-236"><a href="#cb3-236" aria-hidden="true" tabindex="-1"></a>    <span class="at">B =</span> <span class="fu">factor</span>(B, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Kisa"</span>, <span class="st">"Uzun"</span>)),</span>
+<span id="cb3-237"><a href="#cb3-237" aria-hidden="true" tabindex="-1"></a>    <span class="at">C =</span> <span class="fu">factor</span>(C, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Dusuk"</span>, <span class="st">"Yuksek"</span>)),</span>
+<span id="cb3-238"><a href="#cb3-238" aria-hidden="true" tabindex="-1"></a>    <span class="at">D =</span> <span class="fu">factor</span>(D, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Dusuk"</span>, <span class="st">"Yuksek"</span>)),</span>
+<span id="cb3-239"><a href="#cb3-239" aria-hidden="true" tabindex="-1"></a>    <span class="at">kombinasyon =</span> <span class="fu">str_c</span>(<span class="st">"A="</span>, A, <span class="st">" | B="</span>, B, <span class="st">" | C="</span>, C, <span class="st">" | D="</span>, D)</span>
+<span id="cb3-240"><a href="#cb3-240" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-241"><a href="#cb3-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-242"><a href="#cb3-242" aria-hidden="true" tabindex="-1"></a>eksik_deger_tablo <span class="sc">|&gt;</span></span>
+<span id="cb3-243"><a href="#cb3-243" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tablo_html</span>(<span class="st">"Ön işleme sonrası eksik değer kontrolü"</span>)</span>
+<span id="cb3-244"><a href="#cb3-244" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-245"><a href="#cb3-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-246"><a href="#cb3-246" aria-hidden="true" tabindex="-1"></a><span class="fu"># Keşifsel Veri Analizi</span></span>
+<span id="cb3-247"><a href="#cb3-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-248"><a href="#cb3-248" aria-hidden="true" tabindex="-1"></a>İlk adımda veri setinin genel yapısı ve sayısal değişkenlerin temel özetleri incelenmiştir. Bu adım, hangi değişkenlerin karar açısından daha belirleyici olabileceğini anlamak için kullanılmıştır.</span>
+<span id="cb3-249"><a href="#cb3-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-250"><a href="#cb3-250" aria-hidden="true" tabindex="-1"></a>Keşifsel veri analizi, bu projede yalnızca tablo üretmek için değil, sonraki grafik ve karar adımlarını yönlendirmek için kullanılmıştır. Ortalama, minimum ve maksimum değerler incelenerek değişkenlerin hangi aralıkta değiştiği görülmüştür. Böylece örneğin gerçekçilik skoru yüksek olan ayarların enerji yükü bakımından da kabul edilebilir olup olmadığı tartışılabilir hale gelmiştir.</span>
+<span id="cb3-251"><a href="#cb3-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-254"><a href="#cb3-254" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-255"><a href="#cb3-255" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: degisken-ozeti</span></span>
+<span id="cb3-256"><a href="#cb3-256" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb3-257"><a href="#cb3-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-258"><a href="#cb3-258" aria-hidden="true" tabindex="-1"></a><span class="fu">tablo_html</span>(degisken_ozeti_tablo, <span class="st">"Sayısal değişkenlerin genel özeti"</span>)</span>
+<span id="cb3-259"><a href="#cb3-259" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-260"><a href="#cb3-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-261"><a href="#cb3-261" aria-hidden="true" tabindex="-1"></a>Faktör seviyelerine göre ortalamalar incelendiğinde, özellikle sürüş seviyesi ve darbe süresinin sapma, toparlanma ve gerçekçilik skoru üzerinde belirgin farklar oluşturduğu görülmektedir.</span>
+<span id="cb3-262"><a href="#cb3-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-263"><a href="#cb3-263" aria-hidden="true" tabindex="-1"></a>Bu tablo, her faktörün tek başına ortalama etkisini görmeye yardımcı olur. Ancak faktörlerin birlikte çalıştığı unutulmamalıdır. Bir ayarın iyi veya kötü olarak sınıflandırılması yalnızca sürüş seviyesi ya da darbe süresine bağlı değildir; kütle ve sönümleme seviyesi de sonuçları değiştirebilir. Bu nedenle grafiklerle analiz bölümünde değişkenler birlikte yorumlanmıştır.</span>
+<span id="cb3-264"><a href="#cb3-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-267"><a href="#cb3-267" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-268"><a href="#cb3-268" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: faktor-ozetleri</span></span>
+<span id="cb3-269"><a href="#cb3-269" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb3-270"><a href="#cb3-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-271"><a href="#cb3-271" aria-hidden="true" tabindex="-1"></a><span class="fu">tablo_html</span>(faktor_ozetleri_tablo, <span class="st">"Faktör seviyelerine göre ortalama yanıtlar"</span>)</span>
+<span id="cb3-272"><a href="#cb3-272" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-273"><a href="#cb3-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-274"><a href="#cb3-274" aria-hidden="true" tabindex="-1"></a>Bu bölümdeki tablolar, Grafik 1'in temelini oluşturmaktadır. Önce her faktör seviyesi ve her kombinasyon için sapma, toparlanma, gerçekçilik skoru ve enerji değerleri özetlenmiştir. Daha sonra özellikle <span class="in">`Skor`</span> değişkeni kullanılarak her faktör kombinasyonunun ortalama gerçekçilik skoru hesaplanmıştır. Grafik 1, bu hesaplanan ortalama gerçekçilik skorlarını görselleştirerek hangi ayar kombinasyonlarının kullanıcı algısı açısından daha güçlü göründüğünü karşılaştırmalı biçimde göstermektedir.</span>
+<span id="cb3-275"><a href="#cb3-275" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-276"><a href="#cb3-276" aria-hidden="true" tabindex="-1"></a><span class="fu"># Grafiklerle Analiz</span></span>
+<span id="cb3-277"><a href="#cb3-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-278"><a href="#cb3-278" aria-hidden="true" tabindex="-1"></a>Bu bölümde grafiklerde ve tablolarda ortak bir yeşil/teal renk standardı kullanılmıştır. Koyu yeşil ana vurgu ve başlık rengini, canlı yeşil güçlü sonuçları, mint tonu orta seviyedeki durumları, nötr yeşil-gri ton ise daha düşük performans gösteren adayları temsil etmektedir. Böylece farklı grafiklerde kullanılan renklerin aynı görsel dil içinde okunması amaçlanmıştır.</span>
+<span id="cb3-279"><a href="#cb3-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-280"><a href="#cb3-280" aria-hidden="true" tabindex="-1"></a><span class="fu">## Grafik 1: Faktör Kombinasyonlarına Göre Gerçekçilik Skoru</span></span>
+<span id="cb3-281"><a href="#cb3-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-282"><a href="#cb3-282" aria-hidden="true" tabindex="-1"></a>Grafiklerde kullanılan kısaltmalar veri setindeki faktörleri temsil etmektedir: <span class="in">`A`</span> aktüatör sürüş seviyesini, <span class="in">`B`</span> darbe süresini, <span class="in">`C`</span> hareketli kütle seviyesini ve <span class="in">`D`</span> sönümleme seviyesini ifade etmektedir. Örneğin <span class="in">`A:Yüksek | B:Kısa | C:Yüksek | D:Yüksek`</span> ifadesi; aktüatör sürüşünün yüksek, darbe süresinin kısa, hareketli kütlenin yüksek ve sönümlemenin yüksek olduğu ayar kombinasyonunu göstermektedir.</span>
+<span id="cb3-283"><a href="#cb3-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-286"><a href="#cb3-286" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-287"><a href="#cb3-287" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: grafik-1</span></span>
+<span id="cb3-288"><a href="#cb3-288" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb3-289"><a href="#cb3-289" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Faktör kombinasyonlarına göre ortalama gerçekçilik skoru"</span></span>
+<span id="cb3-290"><a href="#cb3-290" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-291"><a href="#cb3-291" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"outputs/figures/grafik_01_gercekcilik_skoru.png"</span>)</span>
+<span id="cb3-292"><a href="#cb3-292" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-293"><a href="#cb3-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-294"><a href="#cb3-294" aria-hidden="true" tabindex="-1"></a>Bu grafik, gerçekçilik skorunun faktör kombinasyonlarına göre değiştiğini göstermektedir. En yüksek skorlar genellikle sürüş seviyesinin yüksek ve darbe süresinin kısa olduğu kombinasyonlarda ortaya çıkmaktadır. Bu durum, sentetik senaryoda geri tepme hissinin güçlü fakat kontrol edilebilir olduğu ayarların daha olumlu değerlendirildiğini göstermektedir.</span>
+<span id="cb3-295"><a href="#cb3-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-296"><a href="#cb3-296" aria-hidden="true" tabindex="-1"></a>Grafik aynı zamanda tüm kombinasyonların birbirine yakın performans göstermediğini de ortaya koymaktadır. Bazı ayarlar yüksek gerçekçilik sağlarken bazıları belirgin biçimde geride kalmaktadır. Bu fark, karar vericinin yalnızca faktör seviyelerini tek tek değil, kombinasyon mantığıyla değerlendirmesi gerektiğini göstermektedir.</span>
+<span id="cb3-297"><a href="#cb3-297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-298"><a href="#cb3-298" aria-hidden="true" tabindex="-1"></a>Grafik 1'de üst sıralarda yer alan kombinasyonlar incelendiğinde, yüksek aktüatör sürüş seviyesinin gerçekçilik algısını artıran önemli bir unsur olduğu görülmektedir. Ancak yalnızca sürüş seviyesinin yüksek olması yeterli değildir; darbe süresinin kısa olması da ayarın daha dengeli algılanmasına katkı sağlamaktadır. Uzun darbe süresi kullanılan bazı kombinasyonlarda gerçekçilik skoru düşmektedir. Bu durum, geri tepme etkisinin güçlü olmasının yanında süresinin de kontrol edilebilir olması gerektiğini göstermektedir.</span>
+<span id="cb3-299"><a href="#cb3-299" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-300"><a href="#cb3-300" aria-hidden="true" tabindex="-1"></a>Kütle ve sönümleme seviyeleri ise üst sıralardaki kombinasyonların kendi içindeki sıralamasını değiştirmektedir. Özellikle yüksek sönümleme, geri tepme sonrası sistemin daha kontrollü davranmasına katkı sunduğu için gerçekçilik algısını dolaylı olarak destekleyebilir. Bu nedenle Grafik 1, tek bir faktörün etkisinden çok faktörlerin birlikte oluşturduğu ayar profilinin önemli olduğunu göstermektedir.</span>
+<span id="cb3-301"><a href="#cb3-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-302"><a href="#cb3-302" aria-hidden="true" tabindex="-1"></a><span class="fu">## Grafik 2: Sapma ve Toparlanma Süresi İlişkisi</span></span>
+<span id="cb3-303"><a href="#cb3-303" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-306"><a href="#cb3-306" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-307"><a href="#cb3-307" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: grafik-2</span></span>
+<span id="cb3-308"><a href="#cb3-308" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb3-309"><a href="#cb3-309" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Sapma ve toparlanma süresi ilişkisi"</span></span>
+<span id="cb3-310"><a href="#cb3-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-311"><a href="#cb3-311" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"outputs/figures/grafik_02_sapma_toparlanma.png"</span>)</span>
+<span id="cb3-312"><a href="#cb3-312" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-313"><a href="#cb3-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-314"><a href="#cb3-314" aria-hidden="true" tabindex="-1"></a>Sapma ile toparlanma süresi birlikte incelendiğinde, daha yüksek sapma üreten ayarların her zaman daha iyi olmadığı görülmektedir. Çünkü yüksek sapma, toparlanma süresini uzatarak kullanıcı kontrolünü zorlaştırabilir. Bu nedenle karar yalnızca tek bir değişkene göre verilmemelidir.</span>
+<span id="cb3-315"><a href="#cb3-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-316"><a href="#cb3-316" aria-hidden="true" tabindex="-1"></a>Bu grafik iş analitiği açısından önemli bir denge problemini göstermektedir. Eğitim simülatöründe sapmanın çok düşük olması gerçekçilik hissini zayıflatabilir; ancak sapmanın çok yüksek olması da kullanıcının hedefe geri dönmesini zorlaştırabilir. Bu nedenle ideal ayar, yüksek sapma üreten değil, yeterli sapma ile makul toparlanma süresini birlikte sağlayan ayardır.</span>
+<span id="cb3-317"><a href="#cb3-317" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-318"><a href="#cb3-318" aria-hidden="true" tabindex="-1"></a>Grafik 2'de noktaların konumu, her deney koşulunda sapma ve toparlanma süresinin birlikte nasıl değiştiğini göstermektedir. Renk tonları gerçekçilik skorunu temsil ettiği için yalnızca eksenlere değil, noktanın rengine de bakmak gerekir. Daha koyu renkli noktalar daha yüksek gerçekçilik skoruna karşılık gelmektedir. Bu sayede, yüksek gerçekçilik skoru sağlayan ayarların aynı zamanda kabul edilebilir toparlanma süresine sahip olup olmadığı görsel olarak değerlendirilebilir.</span>
+<span id="cb3-319"><a href="#cb3-319" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-320"><a href="#cb3-320" aria-hidden="true" tabindex="-1"></a>Grafikte görülen temel çıkarım, kararın tek boyutlu olmadığıdır. Sağ tarafa doğru gidildikçe sapma artmakta, yukarı doğru gidildikçe toparlanma süresi uzamaktadır. İdeal bölge, çok düşük sapmanın olmadığı fakat toparlanma süresinin de aşırı yükselmediği orta-üst denge alanıdır. Bu nedenle Grafik 2, sonraki çoklu yanıt kalite indeksinin neden gerekli olduğunu desteklemektedir: çünkü gerçekçilik, sapma ve toparlanma aynı anda değerlendirilmeden güvenilir bir karar önerisi üretmek zordur.</span>
+<span id="cb3-321"><a href="#cb3-321" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-322"><a href="#cb3-322" aria-hidden="true" tabindex="-1"></a><span class="fu">## Grafik 3: Sönümleme Seviyesine Göre Toparlanma Süresi</span></span>
+<span id="cb3-323"><a href="#cb3-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-326"><a href="#cb3-326" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-327"><a href="#cb3-327" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: grafik-3</span></span>
+<span id="cb3-328"><a href="#cb3-328" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb3-329"><a href="#cb3-329" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Sönümleme seviyesine göre toparlanma süresi"</span></span>
+<span id="cb3-330"><a href="#cb3-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-331"><a href="#cb3-331" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"outputs/figures/grafik_03_toparlanma_boxplot.png"</span>)</span>
+<span id="cb3-332"><a href="#cb3-332" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-333"><a href="#cb3-333" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-334"><a href="#cb3-334" aria-hidden="true" tabindex="-1"></a>Boxplot grafiği, sönümleme seviyesinin toparlanma süresi üzerindeki etkisini görsel olarak karşılaştırmaktadır. Yüksek sönümleme seviyesi, geri tepme sonrası sistemin daha kontrollü davranmasına yardımcı olan bir faktör olarak yorumlanabilir.</span>
+<span id="cb3-335"><a href="#cb3-335" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-336"><a href="#cb3-336" aria-hidden="true" tabindex="-1"></a>Kutu grafiği dağılımı göstermesi açısından özellikle yararlıdır. Sadece ortalamaya bakmak yerine, toparlanma süresinin hangi aralıkta değiştiği ve değerlerin ne kadar yayıldığı görülebilir. Bu da karar sürecinde kararlılık ve tutarlılık açısından ek bilgi sağlar.</span>
+<span id="cb3-337"><a href="#cb3-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-338"><a href="#cb3-338" aria-hidden="true" tabindex="-1"></a><span class="fu">## Grafik 4: Enerji Yükü ve Gerçekçilik Skoru İlişkisi</span></span>
+<span id="cb3-339"><a href="#cb3-339" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-342"><a href="#cb3-342" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-343"><a href="#cb3-343" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: grafik-4</span></span>
+<span id="cb3-344"><a href="#cb3-344" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb3-345"><a href="#cb3-345" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Enerji yükü ve gerçekçilik skoru ilişkisi"</span></span>
+<span id="cb3-346"><a href="#cb3-346" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-347"><a href="#cb3-347" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"outputs/figures/grafik_04_enerji_skor.png"</span>)</span>
+<span id="cb3-348"><a href="#cb3-348" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-349"><a href="#cb3-349" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-350"><a href="#cb3-350" aria-hidden="true" tabindex="-1"></a>Enerji yükü ile gerçekçilik skoru arasında doğrudan ve tek yönlü bir karar vermek uygun değildir. Bazı ayarlar daha yüksek gerçekçilik skoru üretse de enerji yükü de artabilmektedir. Bu nedenle proje kapsamında enerji yükü, karar skorunda dengeleyici bir kriter olarak ele alınmıştır.</span>
+<span id="cb3-351"><a href="#cb3-351" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-352"><a href="#cb3-352" aria-hidden="true" tabindex="-1"></a>Bu bölümde amaç, "en gerçekçi his" ile "uygulanabilir enerji yükü" arasındaki ilişkiyi tartışmaktır. Gerçek bir sistemde enerji yükünün artması batarya kullanımı, aktüatör ısınması veya uzun dönem güvenilirlik gibi konularda risk oluşturabilir. Bu nedenle gerçekçilik skoru yüksek olan bir ayar, enerji yükü çok yüksekse doğrudan en iyi seçenek olarak kabul edilmemelidir.</span>
+<span id="cb3-353"><a href="#cb3-353" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-354"><a href="#cb3-354" aria-hidden="true" tabindex="-1"></a><span class="fu">## Grafik 5: Faktör Seviyelerine Göre Ortalama Skor</span></span>
+<span id="cb3-355"><a href="#cb3-355" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-358"><a href="#cb3-358" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-359"><a href="#cb3-359" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: grafik-5</span></span>
+<span id="cb3-360"><a href="#cb3-360" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb3-361"><a href="#cb3-361" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Faktör seviyelerine göre ortalama gerçekçilik skoru"</span></span>
+<span id="cb3-362"><a href="#cb3-362" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-363"><a href="#cb3-363" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"outputs/figures/grafik_05_faktor_skor.png"</span>)</span>
+<span id="cb3-364"><a href="#cb3-364" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-365"><a href="#cb3-365" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-366"><a href="#cb3-366" aria-hidden="true" tabindex="-1"></a>Bu grafik, her faktörün seviyelerine göre ortalama gerçekçilik skorunu göstermektedir. Ders notlarında vurgulanan görselleştirme prensiplerine uygun olarak, kategorik seviyeler grafik üzerinden karşılaştırılmış ve karar açısından anlamlı farklar aranmıştır.</span>
+<span id="cb3-367"><a href="#cb3-367" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-368"><a href="#cb3-368" aria-hidden="true" tabindex="-1"></a>Grafik, faktör seviyelerinin etkisini sade bir biçimde okumaya yardımcı olur. Bu tür bir görselleştirme, karar vericiye hangi faktörlerin daha dikkatle izlenmesi gerektiğini gösterir. Özellikle gerçekçilik skoru açısından güçlü görünen seviyeler, sonraki çoklu yanıt değerlendirmesinde diğer kriterlerle birlikte yeniden ele alınmıştır.</span>
+<span id="cb3-369"><a href="#cb3-369" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-370"><a href="#cb3-370" aria-hidden="true" tabindex="-1"></a><span class="fu"># Çoklu Yanıt Değerlendirmesi</span></span>
+<span id="cb3-371"><a href="#cb3-371" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-372"><a href="#cb3-372" aria-hidden="true" tabindex="-1"></a>Tek bir performans göstergesine bakmak yerine sapma, toparlanma süresi, gerçekçilik skoru ve enerji yükü birlikte değerlendirilmiştir. Bu amaçla her aday kombinasyon için 0-100 aralığında bir kalite indeksi hesaplanmıştır.</span>
+<span id="cb3-373"><a href="#cb3-373" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-374"><a href="#cb3-374" aria-hidden="true" tabindex="-1"></a>Kalite indeksinde amaç, farklı yönlerde yorumlanan değişkenleri ortak bir karar ölçüsüne dönüştürmektir. Gerçekçilik skorunun yüksek olması olumlu kabul edilirken, toparlanma süresi ve enerji yükünün daha düşük olması tercih edilmiştir. Sapma için ise hedefe yakınlık mantığı kullanılmıştır; çünkü sapmanın ne çok düşük ne de aşırı yüksek olması istenmektedir.</span>
+<span id="cb3-375"><a href="#cb3-375" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-378"><a href="#cb3-378" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-379"><a href="#cb3-379" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: karar-tablosu</span></span>
+<span id="cb3-380"><a href="#cb3-380" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Kalite indeksine göre en iyi aday kombinasyonlar"</span></span>
+<span id="cb3-381"><a href="#cb3-381" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-382"><a href="#cb3-382" aria-hidden="true" tabindex="-1"></a>karar_tablosu <span class="sc">|&gt;</span></span>
+<span id="cb3-383"><a href="#cb3-383" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(kombinasyon_kisa, sapma_ort, toparlanma_ort, skor_ort, enerji_ort, kalite_indeksi, karar_sinifi) <span class="sc">|&gt;</span></span>
+<span id="cb3-384"><a href="#cb3-384" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">8</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-385"><a href="#cb3-385" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb3-386"><a href="#cb3-386" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Faktör kombinasyonu</span><span class="st">`</span> <span class="ot">=</span> kombinasyon_kisa,</span>
+<span id="cb3-387"><a href="#cb3-387" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Ortalama sapma</span><span class="st">`</span> <span class="ot">=</span> sapma_ort,</span>
+<span id="cb3-388"><a href="#cb3-388" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Ortalama toparlanma</span><span class="st">`</span> <span class="ot">=</span> toparlanma_ort,</span>
+<span id="cb3-389"><a href="#cb3-389" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Ortalama skor</span><span class="st">`</span> <span class="ot">=</span> skor_ort,</span>
+<span id="cb3-390"><a href="#cb3-390" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Ortalama enerji</span><span class="st">`</span> <span class="ot">=</span> enerji_ort,</span>
+<span id="cb3-391"><a href="#cb3-391" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Kalite indeksi</span><span class="st">`</span> <span class="ot">=</span> kalite_indeksi,</span>
+<span id="cb3-392"><a href="#cb3-392" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Karar sınıfı</span><span class="st">`</span> <span class="ot">=</span> karar_sinifi</span>
+<span id="cb3-393"><a href="#cb3-393" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb3-394"><a href="#cb3-394" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tablo_html</span>(<span class="st">"Kalite indeksine göre en iyi aday kombinasyonlar"</span>)</span>
+<span id="cb3-395"><a href="#cb3-395" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-396"><a href="#cb3-396" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-399"><a href="#cb3-399" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-400"><a href="#cb3-400" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: grafik-6</span></span>
+<span id="cb3-401"><a href="#cb3-401" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb3-402"><a href="#cb3-402" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Çoklu yanıt kalite indeksine göre aday kombinasyonlar"</span></span>
+<span id="cb3-403"><a href="#cb3-403" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-404"><a href="#cb3-404" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"outputs/figures/grafik_06_coklu_yanit_skoru.png"</span>)</span>
+<span id="cb3-405"><a href="#cb3-405" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-406"><a href="#cb3-406" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-407"><a href="#cb3-407" aria-hidden="true" tabindex="-1"></a>Çoklu yanıt kalite indeksine göre en güçlü aday kombinasyon <span class="in">`A=Yuksek`</span>, <span class="in">`B=Kisa`</span>, <span class="in">`C=Yuksek`</span>, <span class="in">`D=Yuksek`</span> olarak belirlenmiştir. Bu ayar, sentetik senaryo içinde yüksek gerçekçilik skoru sağlarken sapma, toparlanma ve enerji yükü arasında daha dengeli bir sonuç vermektedir.</span>
+<span id="cb3-408"><a href="#cb3-408" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-409"><a href="#cb3-409" aria-hidden="true" tabindex="-1"></a>İlk üç adayın tamamında sürüş seviyesinin yüksek ve darbe süresinin kısa olması dikkat çekicidir. Bu sonuç, sentetik senaryoda güçlü fakat kısa süreli bir etkinin daha avantajlı olduğunu düşündürmektedir. Bununla birlikte kütle ve sönümleme seviyeleri adayların sıralamasını değiştirmektedir. Bu nedenle karar önerisi tek bir faktöre indirgenmemiş, tüm yanıtların birlikte değerlendirildiği kalite indeksi üzerinden yapılmıştır.</span>
+<span id="cb3-410"><a href="#cb3-410" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-411"><a href="#cb3-411" aria-hidden="true" tabindex="-1"></a><span class="fu"># Sonuçlar ve Ana Çıkarımlar</span></span>
+<span id="cb3-412"><a href="#cb3-412" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-413"><a href="#cb3-413" aria-hidden="true" tabindex="-1"></a>Bu çalışmada M4 elektronik eğitim simülatörü için sentetik deney verisi üzerinden R tabanlı bir iş analitiği akışı kurulmuştur. Veri okuma, düzenleme, özetleme, görselleştirme ve çoklu kriterli karar skoru adımları birlikte kullanılmıştır.</span>
+<span id="cb3-414"><a href="#cb3-414" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-415"><a href="#cb3-415" aria-hidden="true" tabindex="-1"></a>Ana çıkarımlar:</span>
+<span id="cb3-416"><a href="#cb3-416" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-417"><a href="#cb3-417" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>En yüksek geri tepme hissi her zaman en iyi ayar anlamına gelmemektedir.</span>
+<span id="cb3-418"><a href="#cb3-418" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Toparlanma süresi ve enerji yükü karar sürecinde mutlaka dikkate alınmalıdır.</span>
+<span id="cb3-419"><a href="#cb3-419" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Sentetik senaryo içinde en dengeli aday <span class="in">`A=Yuksek`</span>, <span class="in">`B=Kisa`</span>, <span class="in">`C=Yuksek`</span>, <span class="in">`D=Yuksek`</span> kombinasyonudur.</span>
+<span id="cb3-420"><a href="#cb3-420" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>R ile hazırlanan bu analiz akışı, gerçek test verisi elde edildiğinde aynı şekilde tekrar çalıştırılabilir.</span>
+<span id="cb3-421"><a href="#cb3-421" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-422"><a href="#cb3-422" aria-hidden="true" tabindex="-1"></a>Genel olarak bu çalışma, iş analitiği yaklaşımının yalnızca geçmiş verileri özetlemekten ibaret olmadığını göstermektedir. Veri düzenleme, görselleştirme ve karar skoru adımları birlikte kullanıldığında, karmaşık görünen teknik bir problem daha anlaşılır bir karar problemine dönüştürülebilmektedir. Bu yönüyle proje, MUY665 dersinde ele alınan tanımlayıcı analitik ve karar desteği yaklaşımını uygulamalı bir örnek üzerinden göstermektedir.</span>
+<span id="cb3-423"><a href="#cb3-423" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-424"><a href="#cb3-424" aria-hidden="true" tabindex="-1"></a><span class="fu"># Kısıtlar ve Etik Not</span></span>
+<span id="cb3-425"><a href="#cb3-425" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-426"><a href="#cb3-426" aria-hidden="true" tabindex="-1"></a>Bu çalışma gerçek saha veya laboratuvar test verisi içermemektedir. Veri seti sentetik/senaryo tabanlı olduğu için bulgular gerçek bir fiziksel sistemin kesin performans kanıtı olarak yorumlanmamalıdır. Gerçek uygulama için pilot test, ölçüm sistemi analizi ve fiziksel doğrulama gereklidir.</span>
+<span id="cb3-427"><a href="#cb3-427" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-428"><a href="#cb3-428" aria-hidden="true" tabindex="-1"></a>Bu proje kapsamında yapay zeka desteği; proje planının düzenlenmesi, R kod akışının yapılandırılması, Quarto rapor taslağının hazırlanması ve yazılı anlatımın iyileştirilmesi amacıyla kullanılmıştır.</span>
+<span id="cb3-429"><a href="#cb3-429" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-430"><a href="#cb3-430" aria-hidden="true" tabindex="-1"></a><span class="fu"># Kaynaklar</span></span>
+<span id="cb3-431"><a href="#cb3-431" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-432"><a href="#cb3-432" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>MUY665 İş Analitiği ders notları, 2025-2026 Bahar Dönemi.</span>
+<span id="cb3-433"><a href="#cb3-433" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>MUY665 2023-2024 Bahar dönemi örnek proje sayfaları.</span>
+<span id="cb3-434"><a href="#cb3-434" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Quarto dokümantasyonu: <span class="ot">&lt;https://quarto.org/&gt;</span></span>
+<span id="cb3-435"><a href="#cb3-435" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>R paketleri: <span class="in">`readr`</span>, <span class="in">`dplyr`</span>, <span class="in">`tidyr`</span>, <span class="in">`stringr`</span>, <span class="in">`ggplot2`</span>.</span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

@@ -1,4 +1,4 @@
-project:
+﻿project:
   type: website
   output-dir: docs
 
@@ -18,7 +18,7 @@ website:
           - text: Ödevler
             href: portfolyo.qmd
           - text: Proje
-            href: project.qmd
+            href: proje.qmd
             
     tools:
       - icon: github
@@ -55,4 +55,5 @@ format:
 
 
 editor: visual
+
 

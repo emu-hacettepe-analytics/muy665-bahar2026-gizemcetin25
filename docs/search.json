@@ -247,9 +247,9 @@
   {
     "objectID": "proje.html",
     "href": "proje.html",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "Elektronik Eğitim Simülatöründe Geri Tepme Davranışının Sentetik Veri ile İş Analitiği",
     "section": "",
-    "text": "Projemizle ilgili güncellemelerden haberdar olmak için bu xxxxx bağlantısındaki proje sayfamızı takip edin.\n(Aşağıdaki başlıklar örnek olarak verilmiştir; lütfen gerektiği şekilde düzenlemekten çekinmeyin.)"
+    "text": "Bu projede, mühimmat kullanmayan elektronik bir eğitim simülatöründe geri tepme davranışını temsil eden sentetik bir deney veri seti R programlama dili ile analiz edilmektedir. Elektronik eğitim simülatörlerinde temel amaç, kullanıcıya güvenli bir ortamda gerçekçi bir eğitim deneyimi sunmaktır. Bu tür sistemlerde geri tepme hissinin çok zayıf olması eğitim gerçekçiliğini azaltabilir; buna karşılık geri tepme davranışının çok sert, uzun süreli veya kontrolsüz olması kullanıcı deneyimini ve sistem güvenilirliğini olumsuz etkileyebilir.\nBu nedenle bu çalışmada geri tepme davranışı tek bir performans göstergesiyle değil, birden fazla kriterin birlikte değerlendirilmesiyle ele alınmıştır. Analizde sapma, toparlanma süresi, gerçekçilik skoru ve enerji yükü birlikte incelenmektedir. Sapma ve gerçekçilik skoru eğitim hissinin yeterliliğini temsil ederken, toparlanma süresi ve enerji yükü sistemin kontrol edilebilirliği ve uygulanabilirliği hakkında bilgi vermektedir.\nProjenin temel karar sorusu şudur: Farklı faktör seviyeleri arasında, sentetik deney senaryosu içinde en dengeli geri tepme davranışını hangi ayar kombinasyonu sağlamaktadır? Bu soruya yanıt verebilmek için faktör seviyeleri arasındaki farklar özet tablolar, grafikler ve çoklu yanıt kalite indeksi yardımıyla incelenmiştir.\nÇalışma kapsamında dört temel faktör ele alınmıştır: aktüatör sürüş seviyesi, darbe süresi, hareketli kütle seviyesi ve sönümleme seviyesi. Bu faktörlerin her biri iki seviyede değerlendirilmiş ve her kombinasyon için iki tekrar olacak şekilde toplam 32 gözlemden oluşan bir sentetik veri seti kullanılmıştır.\nÇalışmanın ana odağı ileri istatistiksel testlerden çok, MUY665 dersinde işlenen iş analitiği sürecini uygulamaktır. Bu nedenle proje; veri okuma, veri düzenleme, keşifsel veri analizi, görselleştirme, özet tablo oluşturma ve karar desteği adımları üzerinden ilerlemektedir. R tarafında readr, dplyr, tidyr, stringr ve ggplot2 paketleri kullanılarak ders notlarında yer alan temel veri analitiği yaklaşımları uygulanmıştır.\nVeri seti sentetik/senaryo tabanlı olarak hazırlanmıştır, bulgular gerçek bir fiziksel sistemin kesin sonucu olarak yorumlanmamalıdır. Buna karşılık çalışma, gerçek test verisi elde edildiğinde aynı analiz akışının nasıl yeniden çalıştırılabileceğini gösteren tekrarlanabilir bir iş analitiği örneği sunmaktadır."
   },
   {
     "objectID": "proje.html#data-source",
@@ -330,16 +330,16 @@
   {
     "objectID": "proje.html#veri-kaynağı",
     "href": "proje.html#veri-kaynağı",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "Elektronik Eğitim Simülatöründe Geri Tepme Davranışının Sentetik Veri ile İş Analitiği",
     "section": "2.1 Veri Kaynağı",
-    "text": "2.1 Veri Kaynağı\nxxxxxx"
+    "text": "2.1 Veri Kaynağı\nBu çalışmada kullanılan veri seti gerçek saha veya test ölçümü değildir. Veri, mühimmat kullanmayan elektronik eğitim simülatörünün geri tepme davranışını temsil etmek amacıyla oluşturulmuş sentetik/senaryo tabanlı deney verisidir.\nBu nedenle bulgular, gerçek bir fiziksel sistemin kesin performans kanıtı olarak değil, R ile iş analitiği yöntemlerinin yeniden üretilebilir bir uygulaması olarak yorumlanmalıdır.\nVeri kaynağının sentetik olarak seçilmesinin temel nedeni, gerçek bir prototip veya saha testinden ölçüm alınmamış olmasıdır. Bu durum, çalışmanın sınırlılığı olmakla birlikte aynı zamanda ders kapsamında öğrenilen R tabanlı veri analitiği sürecini kontrollü bir veri seti üzerinde uygulama olanağı sağlamaktadır. Bu nedenle veri seti, gerçek sistem davranışını birebir temsil eden bir ölçüm kaydı olarak değil, karar analitiği yaklaşımını göstermek için oluşturulmuş bir çalışma verisi olarak ele alınmıştır."
   },
   {
     "objectID": "proje.html#veri-hakkında-genel-bilgiler",
     "href": "proje.html#veri-hakkında-genel-bilgiler",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "Elektronik Eğitim Simülatöründe Geri Tepme Davranışının Sentetik Veri ile İş Analitiği",
     "section": "2.2 Veri Hakkında Genel Bilgiler",
-    "text": "2.2 Veri Hakkında Genel Bilgiler\nxxxxxx"
+    "text": "2.2 Veri Hakkında Genel Bilgiler\nVeri seti dört faktör ve dört yanıt değişkeninden oluşmaktadır. Dört faktörün her biri iki seviyede ele alınmış, her kombinasyon iki tekrar ile gözlemlenmiş ve toplam 32 gözlem elde edilmiştir.\nFaktörler, sistem üzerinde değiştirilebilir ayarları temsil etmektedir:\n\nA - Aktüatör sürüş seviyesi: Aktüatörün geri tepme etkisini oluşturmak için ne kadar güçlü çalıştırıldığını ifade eder. Düşük sürüş seviyesi daha yumuşak bir tepki üretirken, yüksek sürüş seviyesi daha belirgin bir geri tepme hissi oluşturabilir.\nB - Darbe süresi: Geri tepme etkisinin ne kadar süreyle uygulandığını gösterir. Kısa darbe süresi daha ani ve kontrollü bir etkiyi, uzun darbe süresi ise daha yayılmış ve toparlanması daha zor olabilecek bir etkiyi temsil eder.\nC - Hareketli kütle seviyesi: Simülatör içinde geri tepme hissini oluşturan hareketli parçanın kütle düzeyini temsil eder. Daha yüksek kütle, geri tepme hissini güçlendirebilir; ancak sistemin toparlanma davranışını da etkileyebilir.\nD - Sönümleme seviyesi: Geri tepme sonrası hareketin ne kadar hızlı bastırıldığını veya dengelendiğini ifade eder. Yüksek sönümleme, sistemin daha kontrollü biçimde toparlanmasına yardımcı olabilir.\n\nYanıt değişkenleri ise her deney koşulunda sistemin nasıl davrandığını ölçmek için kullanılan performans göstergeleridir:\n\nSapma: Geri tepme sonrasında nişan hattında veya simülatör ekseninde oluşan sapma düzeyini temsil eder. Çok düşük sapma gerçekçilik hissini azaltabilir; çok yüksek sapma ise kontrolü zorlaştırabilir.\nToparlanma: Geri tepme etkisinden sonra sistemin yeniden kararlı hale gelmesi için gereken süreyi temsil eder. Daha düşük toparlanma süresi, kullanıcının bir sonraki harekete daha hızlı hazırlanabilmesi açısından avantajlıdır.\nSkor: Geri tepme davranışının kullanıcı tarafından ne kadar gerçekçi algılanabileceğini temsil eden sentetik bir değerlendirme skorudur. Bu değişkende yüksek değer daha olumlu kabul edilmiştir.\nEnerji: Geri tepme etkisini oluşturmak için gereken enerji yükünü temsil eder. Enerji değerinin çok yükselmesi, gerçek bir sistemde batarya tüketimi, ısınma veya mekanik zorlanma gibi konular açısından risk oluşturabilir.\n\nBu yapı, her faktör kombinasyonunun sistem davranışı üzerindeki etkisini karşılaştırmaya imkan verir. Örneğin yüksek sürüş seviyesi geri tepme hissini artırabilir; ancak aynı zamanda enerji yükünü veya toparlanma süresini de artırabilir. Benzer şekilde yüksek sönümleme, sistemin daha kontrollü toparlanmasına yardımcı olabilir fakat gerçekçilik algısı üzerindeki etkisi diğer faktörlerle birlikte değerlendirilmelidir. Bu nedenle veri seti, tek değişkenli bir sıralama yapmak yerine çok kriterli bir karar problemi olarak yorumlanmıştır.\n\n\n\nVeri setinden ilk sekiz gözlem\n\n\nDeney sırası\nStandart sıra\nTekrar\nA - Aktüatör sürüşü\nB - Darbe süresi\nC - Hareketli kütle\nD - Sönümleme\nSapma\nToparlanma\nGerçekçilik skoru\nEnerji yükü\n\n\n\n\n1\n1\n1\nDüşük\nKısa\nDüşük\nDüşük\n1.46\n114\n7.20\n5.72\n\n\n2\n1\n2\nDüşük\nKısa\nDüşük\nDüşük\n1.55\n112\n7.17\n5.70\n\n\n3\n2\n1\nYüksek\nKısa\nDüşük\nDüşük\n3.26\n137\n8.59\n9.01\n\n\n4\n2\n2\nYüksek\nKısa\nDüşük\nDüşük\n3.32\n135\n8.72\n8.68\n\n\n5\n3\n1\nDüşük\nUzun\nDüşük\nDüşük\n2.20\n163\n6.80\n8.11\n\n\n6\n3\n2\nDüşük\nUzun\nDüşük\nDüşük\n2.03\n148\n6.84\n7.89\n\n\n7\n4\n1\nYüksek\nUzun\nDüşük\nDüşük\n4.16\n201\n7.87\n11.05\n\n\n8\n4\n2\nYüksek\nUzun\nDüşük\nDüşük\n4.11\n198\n8.11\n11.01"
   },
   {
     "objectID": "proje.html#tercih-sebebi",
@@ -601,5 +601,110 @@
     "crumbs": [
       "Çalışma 1"
     ]
+  },
+  {
+    "objectID": "proje.html#veri-okuma-ve-ön-işleme",
+    "href": "proje.html#veri-okuma-ve-ön-işleme",
+    "title": "Elektronik Eğitim Simülatöründe Geri Tepme Davranışının Sentetik Veri ile İş Analitiği",
+    "section": "2.3 Veri Okuma ve Ön İşleme",
+    "text": "2.3 Veri Okuma ve Ön İşleme\nVeriler CSV formatında R ortamına aktarılmıştır. Ders notlarında yer alan readr, dplyr, tidyr ve stringr paketleri kullanılarak veri okunmuş, faktör değişkenleri düzenlenmiş, kombinasyon etiketi oluşturulmuş ve grafikler için uzun formata çevrilmiştir.\nÖn işleme aşamasında öncelikle veri setinde eksik değer olup olmadığı kontrol edilmiştir. Daha sonra A, B, C ve D değişkenleri karakter veri tipinden faktör yapısına dönüştürülmüştür. Bu dönüşüm önemlidir; çünkü bu değişkenler sayısal büyüklük değil, kategorik deney seviyelerini temsil etmektedir. Ayrıca grafiklerde ve özet tablolarda daha okunabilir bir yapı elde etmek için her satırda faktör kombinasyonunu gösteren ek bir etiket oluşturulmuştur.\nGrafik ve özet analizlerde daha esnek çalışabilmek için veri seti uzun formata da çevrilmiştir. Böylece Sapma, Toparlanma, Skor ve Enerji değişkenleri aynı yapı içinde karşılaştırılabilir hale getirilmiştir. Bu adım, ders notlarında anlatılan tidy data yaklaşımına uygun bir düzenleme adımıdır.\nAşağıdaki tablo, analizde kullanılan 32 gözlemli ham sentetik veri setinin tamamını göstermektedir. Tabloda her satır bir deney koşulunu; faktör sütunları ilgili ayarı; son dört sütun ise bu ayar altında elde edilen sentetik yanıt değerlerini göstermektedir.\n\n\n\nAnalizde kullanılan ham sentetik veri seti\n\n\nDeney sırası\nStandart sıra\nTekrar\nA - Aktüatör sürüşü\nB - Darbe süresi\nC - Hareketli kütle\nD - Sönümleme\nSapma\nToparlanma\nGerçekçilik skoru\nEnerji yükü\n\n\n\n\n1\n1\n1\nDüşük\nKısa\nDüşük\nDüşük\n1.46\n114\n7.20\n5.72\n\n\n2\n1\n2\nDüşük\nKısa\nDüşük\nDüşük\n1.55\n112\n7.17\n5.70\n\n\n3\n2\n1\nYüksek\nKısa\nDüşük\nDüşük\n3.26\n137\n8.59\n9.01\n\n\n4\n2\n2\nYüksek\nKısa\nDüşük\nDüşük\n3.32\n135\n8.72\n8.68\n\n\n5\n3\n1\nDüşük\nUzun\nDüşük\nDüşük\n2.20\n163\n6.80\n8.11\n\n\n6\n3\n2\nDüşük\nUzun\nDüşük\nDüşük\n2.03\n148\n6.84\n7.89\n\n\n7\n4\n1\nYüksek\nUzun\nDüşük\nDüşük\n4.16\n201\n7.87\n11.05\n\n\n8\n4\n2\nYüksek\nUzun\nDüşük\nDüşük\n4.11\n198\n8.11\n11.01\n\n\n9\n5\n1\nDüşük\nKısa\nYüksek\nDüşük\n1.94\n151\n7.81\n7.86\n\n\n10\n5\n2\nDüşük\nKısa\nYüksek\nDüşük\n2.02\n152\n7.76\n7.66\n\n\n11\n6\n1\nYüksek\nKısa\nYüksek\nDüşük\n4.06\n185\n9.11\n11.38\n\n\n12\n6\n2\nYüksek\nKısa\nYüksek\nDüşük\n4.27\n180\n9.13\n11.32\n\n\n13\n7\n1\nDüşük\nUzun\nYüksek\nDüşük\n2.58\n210\n6.80\n9.92\n\n\n14\n7\n2\nDüşük\nUzun\nYüksek\nDüşük\n2.56\n217\n6.81\n9.95\n\n\n15\n8\n1\nYüksek\nUzun\nYüksek\nDüşük\n4.94\n260\n7.78\n13.74\n\n\n16\n8\n2\nYüksek\nUzun\nYüksek\nDüşük\n4.94\n257\n7.57\n13.66\n\n\n17\n9\n1\nDüşük\nKısa\nDüşük\nYüksek\n1.15\n88\n7.59\n6.44\n\n\n18\n9\n2\nDüşük\nKısa\nDüşük\nYüksek\n1.21\n92\n7.67\n6.46\n\n\n19\n10\n1\nYüksek\nKısa\nDüşük\nYüksek\n3.04\n112\n8.92\n9.47\n\n\n20\n10\n2\nYüksek\nKısa\nDüşük\nYüksek\n2.96\n106\n9.05\n9.75\n\n\n21\n11\n1\nDüşük\nUzun\nDüşük\nYüksek\n1.76\n122\n7.28\n8.91\n\n\n22\n11\n2\nDüşük\nUzun\nDüşük\nYüksek\n1.68\n136\n7.05\n8.90\n\n\n23\n12\n1\nYüksek\nUzun\nDüşük\nYüksek\n3.68\n162\n8.34\n12.04\n\n\n24\n12\n2\nYüksek\nUzun\nDüşük\nYüksek\n3.63\n163\n8.17\n11.98\n\n\n25\n13\n1\nDüşük\nKısa\nYüksek\nYüksek\n1.45\n123\n8.14\n8.65\n\n\n26\n13\n2\nDüşük\nKısa\nYüksek\nYüksek\n1.49\n119\n8.14\n8.44\n\n\n27\n14\n1\nYüksek\nKısa\nYüksek\nYüksek\n3.58\n149\n9.31\n12.16\n\n\n28\n14\n2\nYüksek\nKısa\nYüksek\nYüksek\n3.61\n146\n9.50\n12.33\n\n\n29\n15\n1\nDüşük\nUzun\nYüksek\nYüksek\n1.93\n188\n7.21\n10.75\n\n\n30\n15\n2\nDüşük\nUzun\nYüksek\nYüksek\n2.08\n191\n7.18\n10.85\n\n\n31\n16\n1\nYüksek\nUzun\nYüksek\nYüksek\n4.34\n227\n8.08\n14.31\n\n\n32\n16\n2\nYüksek\nUzun\nYüksek\nYüksek\n4.26\n228\n8.06\n14.41\n\n\n\n\n\n\n\nCode\nveri_ornek &lt;- read_csv(\"data/03_m4_temiz_veri.csv\", show_col_types = FALSE)\n\nveri_ornek &lt;- veri_ornek |&gt;\n  mutate(\n    A = factor(A, levels = c(\"Dusuk\", \"Yuksek\")),\n    B = factor(B, levels = c(\"Kisa\", \"Uzun\")),\n    C = factor(C, levels = c(\"Dusuk\", \"Yuksek\")),\n    D = factor(D, levels = c(\"Dusuk\", \"Yuksek\")),\n    kombinasyon = str_c(\"A=\", A, \" | B=\", B, \" | C=\", C, \" | D=\", D)\n  )\n\neksik_deger_tablo |&gt;\n  tablo_html(\"Ön işleme sonrası eksik değer kontrolü\")\n\n\n\nÖn işleme sonrası eksik değer kontrolü\n\n\nDeğişken\nEksik değer sayısı\n\n\n\n\nRun\n0\n\n\nStd\n0\n\n\nRep\n0\n\n\nA\n0\n\n\nB\n0\n\n\nC\n0\n\n\nD\n0\n\n\nSapma\n0\n\n\nToparlanma\n0\n\n\nSkor\n0\n\n\nEnerji\n0\n\n\nkombinasyon\n0"
+  },
+  {
+    "objectID": "proje.html#grafik-1-faktör-kombinasyonlarına-göre-gerçekçilik-skoru",
+    "href": "proje.html#grafik-1-faktör-kombinasyonlarına-göre-gerçekçilik-skoru",
+    "title": "Elektronik Eğitim Simülatöründe Geri Tepme Davranışının Sentetik Veri ile İş Analitiği",
+    "section": "4.1 Grafik 1: Faktör Kombinasyonlarına Göre Gerçekçilik Skoru",
+    "text": "4.1 Grafik 1: Faktör Kombinasyonlarına Göre Gerçekçilik Skoru\nGrafiklerde kullanılan kısaltmalar veri setindeki faktörleri temsil etmektedir: A aktüatör sürüş seviyesini, B darbe süresini, C hareketli kütle seviyesini ve D sönümleme seviyesini ifade etmektedir. Örneğin A:Yüksek | B:Kısa | C:Yüksek | D:Yüksek ifadesi; aktüatör sürüşünün yüksek, darbe süresinin kısa, hareketli kütlenin yüksek ve sönümlemenin yüksek olduğu ayar kombinasyonunu göstermektedir.\n\n\n\n\n\nFaktör kombinasyonlarına göre ortalama gerçekçilik skoru\n\n\n\n\nBu grafik, gerçekçilik skorunun faktör kombinasyonlarına göre değiştiğini göstermektedir. En yüksek skorlar genellikle sürüş seviyesinin yüksek ve darbe süresinin kısa olduğu kombinasyonlarda ortaya çıkmaktadır. Bu durum, sentetik senaryoda geri tepme hissinin güçlü fakat kontrol edilebilir olduğu ayarların daha olumlu değerlendirildiğini göstermektedir.\nGrafik aynı zamanda tüm kombinasyonların birbirine yakın performans göstermediğini de ortaya koymaktadır. Bazı ayarlar yüksek gerçekçilik sağlarken bazıları belirgin biçimde geride kalmaktadır. Bu fark, karar vericinin yalnızca faktör seviyelerini tek tek değil, kombinasyon mantığıyla değerlendirmesi gerektiğini göstermektedir.\nGrafik 1’de üst sıralarda yer alan kombinasyonlar incelendiğinde, yüksek aktüatör sürüş seviyesinin gerçekçilik algısını artıran önemli bir unsur olduğu görülmektedir. Ancak yalnızca sürüş seviyesinin yüksek olması yeterli değildir; darbe süresinin kısa olması da ayarın daha dengeli algılanmasına katkı sağlamaktadır. Uzun darbe süresi kullanılan bazı kombinasyonlarda gerçekçilik skoru düşmektedir. Bu durum, geri tepme etkisinin güçlü olmasının yanında süresinin de kontrol edilebilir olması gerektiğini göstermektedir.\nKütle ve sönümleme seviyeleri ise üst sıralardaki kombinasyonların kendi içindeki sıralamasını değiştirmektedir. Özellikle yüksek sönümleme, geri tepme sonrası sistemin daha kontrollü davranmasına katkı sunduğu için gerçekçilik algısını dolaylı olarak destekleyebilir. Bu nedenle Grafik 1, tek bir faktörün etkisinden çok faktörlerin birlikte oluşturduğu ayar profilinin önemli olduğunu göstermektedir."
+  },
+  {
+    "objectID": "proje.html#grafik-2-sapma-ve-toparlanma-süresi-ilişkisi",
+    "href": "proje.html#grafik-2-sapma-ve-toparlanma-süresi-ilişkisi",
+    "title": "Elektronik Eğitim Simülatöründe Geri Tepme Davranışının Sentetik Veri ile İş Analitiği",
+    "section": "4.2 Grafik 2: Sapma ve Toparlanma Süresi İlişkisi",
+    "text": "4.2 Grafik 2: Sapma ve Toparlanma Süresi İlişkisi\n\n\n\n\n\nSapma ve toparlanma süresi ilişkisi\n\n\n\n\nSapma ile toparlanma süresi birlikte incelendiğinde, daha yüksek sapma üreten ayarların her zaman daha iyi olmadığı görülmektedir. Çünkü yüksek sapma, toparlanma süresini uzatarak kullanıcı kontrolünü zorlaştırabilir. Bu nedenle karar yalnızca tek bir değişkene göre verilmemelidir.\nBu grafik iş analitiği açısından önemli bir denge problemini göstermektedir. Eğitim simülatöründe sapmanın çok düşük olması gerçekçilik hissini zayıflatabilir; ancak sapmanın çok yüksek olması da kullanıcının hedefe geri dönmesini zorlaştırabilir. Bu nedenle ideal ayar, yüksek sapma üreten değil, yeterli sapma ile makul toparlanma süresini birlikte sağlayan ayardır.\nGrafik 2’de noktaların konumu, her deney koşulunda sapma ve toparlanma süresinin birlikte nasıl değiştiğini göstermektedir. Renk tonları gerçekçilik skorunu temsil ettiği için yalnızca eksenlere değil, noktanın rengine de bakmak gerekir. Daha koyu renkli noktalar daha yüksek gerçekçilik skoruna karşılık gelmektedir. Bu sayede, yüksek gerçekçilik skoru sağlayan ayarların aynı zamanda kabul edilebilir toparlanma süresine sahip olup olmadığı görsel olarak değerlendirilebilir.\nGrafikte görülen temel çıkarım, kararın tek boyutlu olmadığıdır. Sağ tarafa doğru gidildikçe sapma artmakta, yukarı doğru gidildikçe toparlanma süresi uzamaktadır. İdeal bölge, çok düşük sapmanın olmadığı fakat toparlanma süresinin de aşırı yükselmediği orta-üst denge alanıdır. Bu nedenle Grafik 2, sonraki çoklu yanıt kalite indeksinin neden gerekli olduğunu desteklemektedir: çünkü gerçekçilik, sapma ve toparlanma aynı anda değerlendirilmeden güvenilir bir karar önerisi üretmek zordur."
+  },
+  {
+    "objectID": "proje.html#grafik-3-sönümleme-seviyesine-göre-toparlanma-süresi",
+    "href": "proje.html#grafik-3-sönümleme-seviyesine-göre-toparlanma-süresi",
+    "title": "Elektronik Eğitim Simülatöründe Geri Tepme Davranışının Sentetik Veri ile İş Analitiği",
+    "section": "4.3 Grafik 3: Sönümleme Seviyesine Göre Toparlanma Süresi",
+    "text": "4.3 Grafik 3: Sönümleme Seviyesine Göre Toparlanma Süresi\n\n\n\n\n\nSönümleme seviyesine göre toparlanma süresi\n\n\n\n\nBoxplot grafiği, sönümleme seviyesinin toparlanma süresi üzerindeki etkisini görsel olarak karşılaştırmaktadır. Yüksek sönümleme seviyesi, geri tepme sonrası sistemin daha kontrollü davranmasına yardımcı olan bir faktör olarak yorumlanabilir.\nKutu grafiği dağılımı göstermesi açısından özellikle yararlıdır. Sadece ortalamaya bakmak yerine, toparlanma süresinin hangi aralıkta değiştiği ve değerlerin ne kadar yayıldığı görülebilir. Bu da karar sürecinde kararlılık ve tutarlılık açısından ek bilgi sağlar."
+  },
+  {
+    "objectID": "proje.html#grafik-4-enerji-yükü-ve-gerçekçilik-skoru-ilişkisi",
+    "href": "proje.html#grafik-4-enerji-yükü-ve-gerçekçilik-skoru-ilişkisi",
+    "title": "Elektronik Eğitim Simülatöründe Geri Tepme Davranışının Sentetik Veri ile İş Analitiği",
+    "section": "4.4 Grafik 4: Enerji Yükü ve Gerçekçilik Skoru İlişkisi",
+    "text": "4.4 Grafik 4: Enerji Yükü ve Gerçekçilik Skoru İlişkisi\n\n\n\n\n\nEnerji yükü ve gerçekçilik skoru ilişkisi\n\n\n\n\nEnerji yükü ile gerçekçilik skoru arasında doğrudan ve tek yönlü bir karar vermek uygun değildir. Bazı ayarlar daha yüksek gerçekçilik skoru üretse de enerji yükü de artabilmektedir. Bu nedenle proje kapsamında enerji yükü, karar skorunda dengeleyici bir kriter olarak ele alınmıştır.\nBu bölümde amaç, “en gerçekçi his” ile “uygulanabilir enerji yükü” arasındaki ilişkiyi tartışmaktır. Gerçek bir sistemde enerji yükünün artması batarya kullanımı, aktüatör ısınması veya uzun dönem güvenilirlik gibi konularda risk oluşturabilir. Bu nedenle gerçekçilik skoru yüksek olan bir ayar, enerji yükü çok yüksekse doğrudan en iyi seçenek olarak kabul edilmemelidir."
+  },
+  {
+    "objectID": "proje.html#grafik-5-faktör-seviyelerine-göre-ortalama-skor",
+    "href": "proje.html#grafik-5-faktör-seviyelerine-göre-ortalama-skor",
+    "title": "Elektronik Eğitim Simülatöründe Geri Tepme Davranışının Sentetik Veri ile İş Analitiği",
+    "section": "4.5 Grafik 5: Faktör Seviyelerine Göre Ortalama Skor",
+    "text": "4.5 Grafik 5: Faktör Seviyelerine Göre Ortalama Skor\n\n\n\n\n\nFaktör seviyelerine göre ortalama gerçekçilik skoru\n\n\n\n\nBu grafik, her faktörün seviyelerine göre ortalama gerçekçilik skorunu göstermektedir. Ders notlarında vurgulanan görselleştirme prensiplerine uygun olarak, kategorik seviyeler grafik üzerinden karşılaştırılmış ve karar açısından anlamlı farklar aranmıştır.\nGrafik, faktör seviyelerinin etkisini sade bir biçimde okumaya yardımcı olur. Bu tür bir görselleştirme, karar vericiye hangi faktörlerin daha dikkatle izlenmesi gerektiğini gösterir. Özellikle gerçekçilik skoru açısından güçlü görünen seviyeler, sonraki çoklu yanıt değerlendirmesinde diğer kriterlerle birlikte yeniden ele alınmıştır."
+  },
+  {
+    "objectID": "docs/project.html",
+    "href": "docs/project.html",
+    "title": "Project X",
+    "section": "",
+    "text": "Welcome to my project page.\nKeep an eye on this space to stay updated with my project activities.\n(The titles below are provided as examples; please feel free to adjust them as necessary.)"
+  },
+  {
+    "objectID": "docs/project.html#data-source",
+    "href": "docs/project.html#data-source",
+    "title": "Project X",
+    "section": "2.1 Data Source",
+    "text": "2.1 Data Source\nxxxxxx"
+  },
+  {
+    "objectID": "docs/project.html#general-information-about-data",
+    "href": "docs/project.html#general-information-about-data",
+    "title": "Project X",
+    "section": "2.2 General Information About Data",
+    "text": "2.2 General Information About Data\nxxxxxx"
+  },
+  {
+    "objectID": "docs/project.html#reason-of-choice",
+    "href": "docs/project.html#reason-of-choice",
+    "title": "Project X",
+    "section": "2.3 Reason of Choice",
+    "text": "2.3 Reason of Choice\nxxxxxx"
+  },
+  {
+    "objectID": "docs/project.html#preprocessing",
+    "href": "docs/project.html#preprocessing",
+    "title": "Project X",
+    "section": "2.4 Preprocessing",
+    "text": "2.4 Preprocessing\nxxxxxx"
+  },
+  {
+    "objectID": "docs/project.html#exploratory-data-analysis",
+    "href": "docs/project.html#exploratory-data-analysis",
+    "title": "Project X",
+    "section": "3.1 Exploratory Data Analysis",
+    "text": "3.1 Exploratory Data Analysis\nxxxxxx"
+  },
+  {
+    "objectID": "docs/project.html#trend-analysis",
+    "href": "docs/project.html#trend-analysis",
+    "title": "Project X",
+    "section": "3.2 Trend Analysis",
+    "text": "3.2 Trend Analysis\nxxxxxx"
+  },
+  {
+    "objectID": "docs/project.html#model-fitting",
+    "href": "docs/project.html#model-fitting",
+    "title": "Project X",
+    "section": "3.3 Model Fitting",
+    "text": "3.3 Model Fitting\nxxxxxx"
+  },
+  {
+    "objectID": "docs/project.html#results",
+    "href": "docs/project.html#results",
+    "title": "Project X",
+    "section": "3.4 Results",
+    "text": "3.4 Results\nxxxxxx"
   }
 ]
