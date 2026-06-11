@@ -19,9 +19,9 @@ sidebar: false
 
 # Projects
 
-# Publications
+-   Elektronik Eğitim Simülatöründe Geri Tepme Davranışının Sentetik Veri ile İş Analitiği
 
-1.  Dasdemir, E., Batta, R., Koksalan, M., Tezcaner Ozturk, D. (2022) “UAV Routing for Reconnaissance Mission: A Multi-Objective Orienteering Problem with Time-Dependent Prizes and Multiple Connections”, Computers & Operations Research, 145: 105882.
+# Publications
 
 # Competencies
 
